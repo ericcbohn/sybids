@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using sybids.Repo;
 
 namespace sybids
 {
@@ -19,6 +20,15 @@ namespace sybids
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<Settings>(options => {
+                options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+            });
+            /* Transient: created each time
+             * Scoped: created only once per request
+             * Singleton: created the first time requested.  Each subsequent request uses the instance that was created the first time.
+             */
+            services.AddTransient<IBidRepo, BidRepo>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

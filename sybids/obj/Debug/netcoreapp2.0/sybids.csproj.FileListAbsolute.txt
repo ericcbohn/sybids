@@ -8,13 +8,13 @@
 /Users/ericbohn/Documents/Projects/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfo.cs
 /Users/ericbohn/Documents/Projects/sybids/obj/Debug/netcoreapp2.0/sybids.dll
 /Users/ericbohn/Documents/Projects/sybids/obj/Debug/netcoreapp2.0/sybids.pdb
+/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.csproj.CoreCompileInputs.cache
+/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfoInputs.cache
+/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfo.cs
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/bin/Debug/netcoreapp2.0/sybids.deps.json
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/bin/Debug/netcoreapp2.0/sybids.runtimeconfig.json
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/bin/Debug/netcoreapp2.0/sybids.runtimeconfig.dev.json
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/bin/Debug/netcoreapp2.0/sybids.dll
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/bin/Debug/netcoreapp2.0/sybids.pdb
-/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.csproj.CoreCompileInputs.cache
-/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfoInputs.cache
-/Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfo.cs
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.dll
 /Users/ericbohn/Documents/Projects/sybids-sln/sybids/obj/Debug/netcoreapp2.0/sybids.pdb

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using sybids.Repo;
+using sybids.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,47 +13,42 @@ namespace sybids.Controllers
     [Route("api/[controller]")]
     public class BidController : Controller
     {
-        // POST api/bidpdf
-        [HttpPost]
-        public void Post([FromBody]string bidpdf) {
-            
+        private readonly IBidRepo _bidRepo;
+
+        public BidController(IBidRepo repo) {
+            _bidRepo = repo;
         }
 
-        // GET: api/bid
         [HttpGet]
-        public void Get() {
-            throw new NotImplementedException();
+        public Task<IEnumerable<LineModel>> Get() {
+            return GetAllLinesInternal();
         }
-        //// GET: api/values
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        private async Task<IEnumerable<LineModel>> GetAllLinesInternal() {
+            return await _bidRepo.GetAllLines();
+        }
 
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody]string value)
-        //{
-        //}
+        [HttpGet("{lineId}")]
+        public Task<LineModel> Get(string lineId) {
+            return GetLineInternal(lineId);
+        }
 
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
+        private async Task<LineModel> GetLineInternal(string lineId) {
+            return await _bidRepo.GetLine(lineId);
+        }
 
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpPost]
+        public void Post([FromBody]LineModel line) {
+            _bidRepo.AddLine(line);
+        }
+
+        [HttpPut("{lineId}")]
+        public void Put(string lineId, [FromBody]LineModel line) {
+            _bidRepo.UpdateLine(lineId, line);
+        }
+
+        public void Delete(string lineId) {
+            _bidRepo.RemoveLine(lineId);
+        }
     }
 }

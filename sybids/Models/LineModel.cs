@@ -6,11 +6,11 @@ using Newtonsoft.Json.Converters;
 
 namespace sybids.Models {
     public class LineModel {
-        public ObjectId MongoID { get; set; }
-        public int LineID { get; set; }
-        [JsonProperty("Base"), JsonConverter(typeof(StringEnumConverter))]
+        public ObjectId _id { get; set; }
+        public int LineId { get; set; }
+        [JsonProperty("base"), JsonConverter(typeof(StringEnumConverter))]
         public Airport Base { get; set; }
-        [JsonProperty("Position"), JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("position"), JsonConverter(typeof(StringEnumConverter))]
         public Position Position { get; set; }
         public int BlockMinutes { get; set; }
         public int CreditMinutes { get; set; }
@@ -25,9 +25,9 @@ namespace sybids.Models {
 
     public class PairingModel {
         public int Flight { get; set; }
-        [JsonProperty("Departure"), JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("departure"), JsonConverter(typeof(StringEnumConverter))]
         public Airport Departure { get; set; }
-        [JsonProperty("Destination"), JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("destination"), JsonConverter(typeof(StringEnumConverter))]
         public Airport Destination { get; set; }
         public bool IsDeadhead { get; set; }
     }
