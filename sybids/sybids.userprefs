@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{9093CCB9-7758-456F-9112-C4CD4EED5C35}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClientApp/src/app/bid/bid.service.ts">
+    <Files>
+      <File FileName="Controllers/SampleDataController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/BidController.cs" Line="29" Column="29" />
+      <File FileName="ClientApp/src/app/bid/bid.component.ts" Line="1" Column="1" />
+      <File FileName="ClientApp/src/app/bid/bid.service.ts" Line="22" Column="1" />
+      <File FileName="ClientApp/src/app/fetch-data/fetch-data.component.ts" Line="18" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.sybids PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
