@@ -9,9 +9,10 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { BidComponent } from './bid/bid.component';
+import { BidComponent } from './bids/bid/bid.component';
 
-import { BidService } from './bid/bid.service';
+import { BidService } from './bids/shared/bid.service';
+import { AdminComponent } from './bids/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BidService } from './bid/bid.service';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    BidComponent
+    BidComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +30,7 @@ import { BidService } from './bid/bid.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'admin', component: AdminComponent },
       { path: 'bid', component: BidComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
