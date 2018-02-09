@@ -19,36 +19,52 @@ namespace sybids.Controllers
             _bidRepo = repo;
         }
 
+        // Get all lines - api/bid
         [HttpGet]
         public Task<IEnumerable<LineModel>> Get() {
             return GetAllLinesInternal();
         }
 
-        private async Task<IEnumerable<LineModel>> GetAllLinesInternal() {
-            return await _bidRepo.GetAllLines();
-        }
-
+        // Get specific line - api/bid/{lineid}
         [HttpGet("{lineId}")]
-        public Task<LineModel> Get(string lineId) {
+        public Task<LineModel> Get(int lineId) {
             return GetLineInternal(lineId);
         }
 
-        private async Task<LineModel> GetLineInternal(string lineId) {
-            return await _bidRepo.GetLine(lineId);
-        }
-
+        // Post line - api/bid
         [HttpPost]
         public void Post([FromBody]LineModel line) {
             _bidRepo.AddLine(line);
         }
 
-        [HttpPut("{lineId}")]
-        public void Put(string lineId, [FromBody]LineModel line) {
+        // Put specific line - api/bid/{lineid}
+        [HttpPut("{lineid}")]
+        public void Put(int lineId, [FromBody]LineModel line) {
             _bidRepo.UpdateLine(lineId, line);
         }
 
-        public void Delete(string lineId) {
+        // Delete specific line - api/bid/{lineid}
+        [HttpDelete("{lineid}")]
+        public void Delete(int lineId) {
             _bidRepo.RemoveLine(lineId);
         }
+
+        // Delete all lines - api/bid
+        [HttpDelete]
+        public void Delete() {
+            _bidRepo.RemoveAllLines();
+        }
+
+        #region private methods
+
+        private async Task<IEnumerable<LineModel>> GetAllLinesInternal() {
+            return await _bidRepo.GetAllLines();
+        }
+
+        private async Task<LineModel> GetLineInternal(int lineId) {
+            return await _bidRepo.GetLine(lineId);
+        }
+
+        #endregion
     }
 }

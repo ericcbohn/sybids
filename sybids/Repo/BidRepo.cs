@@ -19,9 +19,8 @@ namespace sybids.Repo {
             return documents;
         }
 
-        public async Task<LineModel> GetLine(string lineId) {
+        public async Task<LineModel> GetLine(int lineId) {
             var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
-
             try { 
                 return await _context.Lines.Find(filter).FirstOrDefaultAsync();
             }
@@ -41,7 +40,7 @@ namespace sybids.Repo {
             }
         }
 
-        public async Task<bool> UpdateLine(string lineId, LineModel line) {
+        public async Task<bool> UpdateLine(int lineId, LineModel line) {
             try {
                 ReplaceOneResult actionResult = await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(lineId), line, new UpdateOptions { IsUpsert = true });
                 return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
@@ -52,9 +51,10 @@ namespace sybids.Repo {
             }
         }
 
-        public async Task<bool> RemoveLine(string lineId) {
+        public async Task<bool> RemoveLine(int lineId) {
+            var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
             try {
-                DeleteResult actionResult = await _context.Lines.DeleteOneAsync(Builders<LineModel>.Filter.Eq("lineid", lineId));
+                DeleteResult actionResult = await _context.Lines.DeleteOneAsync(filter);
                 return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
             }
             catch(Exception ex) {

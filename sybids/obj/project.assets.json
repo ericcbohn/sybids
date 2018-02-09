@@ -4968,6 +4968,17 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "TypeLite/1.8.4": {
+        "type": "package",
+        "compile": {
+          "lib/net4/TypeLite.Net4.dll": {},
+          "lib/net4/TypeLite.dll": {}
+        },
+        "runtime": {
+          "lib/net4/TypeLite.Net4.dll": {},
+          "lib/net4/TypeLite.dll": {}
+        }
+      },
       "WindowsAzure.Storage/8.1.4": {
         "type": "package",
         "dependencies": {
@@ -13042,6 +13053,25 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "TypeLite/1.8.4": {
+      "sha512": "OJT3FFuHIACV2gR1cR1HqYD4pbnT6PBku/Se+yCCNcTnRePVuurquUQDAufbqF8cR+7ggh7IHClC07P/sXRF+g==",
+      "type": "package",
+      "path": "typelite/1.8.4",
+      "files": [
+        "content/net4/Scripts/Manager.ttinclude",
+        "content/net4/Scripts/TypeLite.Net4.tt",
+        "content/portable-net4+sl4+wp8+win8/Scripts/Manager.ttinclude",
+        "content/portable-net4+sl4+wp8+win8/Scripts/TypeLite.tt",
+        "lib/net4/TypeLite.Net4.dll",
+        "lib/net4/TypeLite.Net4.pdb",
+        "lib/net4/TypeLite.dll",
+        "lib/net4/TypeLite.pdb",
+        "lib/portable-net4+sl4+wp8+win8/TypeLite.dll",
+        "lib/portable-net4+sl4+wp8+win8/TypeLite.pdb",
+        "typelite.1.8.4.nupkg.sha512",
+        "typelite.nuspec"
+      ]
+    },
     "WindowsAzure.Storage/8.1.4": {
       "sha512": "W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "type": "package",
@@ -13071,7 +13101,8 @@
       "Microsoft.AspNetCore.SpaServices.Extensions >= 2.0.0-rc1-final",
       "Microsoft.NETCore.App >= 2.0.0",
       "MongoDB.Driver >= 2.5.0",
-      "Newtonsoft.Json >= 10.0.3"
+      "Newtonsoft.Json >= 10.0.3",
+      "TypeLite >= 1.8.4"
     ]
   },
   "packageFolders": {
@@ -13133,6 +13164,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[10.0.3, )"
+          },
+          "TypeLite": {
+            "target": "Package",
+            "version": "[1.8.4, )"
           }
         },
         "imports": [
@@ -13142,5 +13177,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'TypeLite 1.8.4' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "TypeLite",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

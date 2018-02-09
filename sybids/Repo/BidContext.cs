@@ -13,7 +13,7 @@ namespace sybids.Repo {
         }
 
         public IMongoCollection<LineModel> Lines {
-            get { return _database.GetCollection<LineModel>("Lines"); }
+            get { return _database.GetCollection<LineModel>("lines"); }
         }
     }
 }
