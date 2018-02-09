@@ -1,3 +1,41 @@
-<p>
-  bid works!
-</p>
+<h2>Available Lines</h2>
+
+<ul class="lines">
+  <li *ngFor="let line of lines" (click)="onSelect(line)" [class.selected]="line === selectedLine">
+    <span class="hero-element">
+      <span class="badge">{{ line.lineId }}</span> {{ line.base }}
+    </span>
+    <button class="delete-button" (click)="deleteLine(line, $event)">Delete</button>
+  </li>
+</ul>
+
+<div class="error" *ngIf="error">{{ error }}</div>
+<button (click)="addLine()">Add New Line</button>
+<div *ngIf="addingLine">
+  <p>line-detail component goes here</p>
+  <!-- <line-detail (close)="close($event)"></line-detail> -->
+</div>
+
+<div *ngIf="selectedLine">
+  <h2>Line {{ selectedLine.lineId | uppercase }} has been selected.</h2>
+  <!-- <button (click)="gotoDetail()">View Details</button> -->
+</div>
+
+<div>
+  <style>.hidden { visibility: hidden }</style>
+  <h4>ngFor Features</h4>
+  <button (click)="showNgFor=!showNgFor">{{ showNgFor ? 'Hide' : 'Show' }} ngFor Features</button>
+  <table [class.hidden]="!showNgFor">
+    <tbody>
+      <tr *ngFor="let line of lines; let ix = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
+        <td>{{line.lineId}}</td>
+        <td>{{ix}}</td>
+        <td>{{c}}</td>
+        <td>{{e}}</td>
+        <td>{{o}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
