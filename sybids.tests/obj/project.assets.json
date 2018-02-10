@@ -13964,11 +13964,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ericbohn/Documents/Projects/sybids-sln/sybids.tests/sybids.tests.csproj",
+      "projectUniqueName": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/sybids.tests.csproj",
       "projectName": "sybids.tests",
-      "projectPath": "/Users/ericbohn/Documents/Projects/sybids-sln/sybids.tests/sybids.tests.csproj",
+      "projectPath": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/sybids.tests.csproj",
       "packagesPath": "/Users/ericbohn/.nuget/packages/",
-      "outputPath": "/Users/ericbohn/Documents/Projects/sybids-sln/sybids.tests/obj/",
+      "outputPath": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -13985,8 +13985,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/ericbohn/Documents/Projects/sybids-sln/sybids/sybids.csproj": {
-              "projectPath": "/Users/ericbohn/Documents/Projects/sybids-sln/sybids/sybids.csproj"
+            "/Users/ericbohn/Documents/Projects/sybids/sybids/sybids.csproj": {
+              "projectPath": "/Users/ericbohn/Documents/Projects/sybids/sybids/sybids.csproj"
             }
           }
         }

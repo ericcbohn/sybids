@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { BidService } from '../shared/bid.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +8,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private bidService: BidService) { }
 
   ngOnInit() { }
 
