@@ -5,7 +5,7 @@ import { LineModel } from './line.model';
 
 @Injectable()
 export class BidService {
-  private BID_URL = 'api/bid';
+  private BID_URL = '/api/bid';
     
   constructor(private http: Http) { }
 
@@ -13,7 +13,7 @@ export class BidService {
     return this.http.get(this.BID_URL)
                     .toPromise()
                     .then((response) => {
-                      return response.json().data as LineModel[];
+                      return response.json() as LineModel[];
                     })
                     .catch(this.handleError);
   }
@@ -54,7 +54,7 @@ export class BidService {
 
     return this.http.post(this.BID_URL, JSON.stringify(line), {headers: headers})
                     .toPromise()
-                    .then(res => res.json().data)
+                    .then(res => res.json())
                     .catch(this.handleError);
   }
 

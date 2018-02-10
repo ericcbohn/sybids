@@ -18,7 +18,10 @@ export class BidComponent implements OnInit {
 
   getAllLines(): void {
     this.bidService.getAllLines()
-                   .then(lines => this.lines = lines)
+                   .then(lines => { 
+                     this.lines = lines;
+                     console.log(this.lines);
+                   })
                    .catch(error => this.error = error);
   }
 

@@ -1,23 +1,23 @@
 export interface LineModel {
-    _id: number;
-    dateCreatedUtc: Date;
-    lineId: number;
+    _id: string;
+    datecreatedutc: string;
+    lineid: string;
     base: string;
     position: string;
-    blockMinutes: number;
-    creditMinutes: number;
+    blockminutes: string;
+    creditminutes: string;
     days: DayModel[];
 }
 
 export interface DayModel {
-    reportTimeUtc: Date;
-    releaseTimeUtc: Date;
+    reporttimeutc: string;
+    releasetimeutc: string;
     pairings: PairingModel[];
 }
 
 export interface PairingModel {
-    flight: number;
+    flight: string;
     departure: string;
     destination: string;
-    isDeadhead: boolean;
+    isdeadhead: string;
 }

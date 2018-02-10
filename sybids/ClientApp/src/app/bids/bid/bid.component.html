@@ -1,13 +1,36 @@
 <h2>Available Lines</h2>
 
-<ul class="lines">
-  <li *ngFor="let line of lines" (click)="onSelect(line)" [class.selected]="line === selectedLine">
-    <span class="hero-element">
-      <span class="badge">{{ line.lineId }}</span> {{ line.base }}
-    </span>
-    <button class="delete-button" (click)="deleteLine(line, $event)">Delete</button>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-8">
+          <div [class.hidden]="lines" class="alert alert-info">
+              Please Wait...</div>
+          <div class="alert alert-success" style="display:none;">
+              <span class="glyphicon glyphicon-ok"></span> Drag row to change Order</div>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Line ID</th>
+                      <th>Base</th>
+                      <th>Position</th>
+                      <th>Block</th>
+                      <th>Credit</th>
+                  </tr>
+              </thead>
+              <tbody class="lines">
+                  <tr *ngFor="let line of lines" (click)="onSelect(line)" [class.selected]="line === selectedLine">
+                    <td>{{ line.lineid }}</td>
+                    <td>{{ line.base }}</td>
+                    <td>{{ line.position }}</td>
+                    <td>{{ line.blockminutes }}</td>
+                    <td>{{ line.creditminutes }}</td>
+                    <td><button class="delete-button" (click)="deleteLine(line, $event)">Delete</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
 
 <div class="error" *ngIf="error">{{ error }}</div>
 <button (click)="addLine()">Add New Line</button>
@@ -17,7 +40,7 @@
 </div>
 
 <div *ngIf="selectedLine">
-  <h2>Line {{ selectedLine.lineId | uppercase }} has been selected.</h2>
+  <h2>Line {{ selectedLine.lineid }} has been selected.</h2>
   <!-- <button (click)="gotoDetail()">View Details</button> -->
 </div>
 
@@ -28,7 +51,7 @@
   <table [class.hidden]="!showNgFor">
     <tbody>
       <tr *ngFor="let line of lines; let ix = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
-        <td>{{line.lineId}}</td>
+        <td>{{line.lineid}}</td>
         <td>{{ix}}</td>
         <td>{{c}}</td>
         <td>{{e}}</td>
