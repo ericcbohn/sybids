@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BidService } from '../shared/bid.service';
+import { LineService } from '../shared/line.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +8,7 @@ import { BidService } from '../shared/bid.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private bidService: BidService) { }
+  constructor(private lineService: LineService) { }
 
   ngOnInit() { }
 

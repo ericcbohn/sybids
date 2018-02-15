@@ -18,14 +18,18 @@
                   </tr>
               </thead>
               <tbody class="lines">
-                  <tr *ngFor="let line of lines" (click)="onSelect(line)" [class.selected]="line === selectedLine">
+                <!-- https://angular.io/api/common/NgForOf -->
+                <ng-template ngFor let-line [ngForOf]="lines" let-i="index">
+                  <tr (click)="onSelect(line)" [class.selected]="line === selectedLine">
                     <td>{{ line.lineid }}</td>
                     <td>{{ line.base }}</td>
                     <td>{{ line.position }}</td>
                     <td>{{ line.blockminutes }}</td>
                     <td>{{ line.creditminutes }}</td>
-                    <td><button class="delete-button" (click)="deleteLine(line, $event)">Delete</button></td>
+                    <!-- <td><button class="delete-button" (click)="deleteLine(line, $event)">Delete</button></td> -->
                   </tr>
+                  <app-line-month [line]="selectedLine" [lineIndex]="i"></app-line-month>
+                </ng-template>
               </tbody>
           </table>
       </div>

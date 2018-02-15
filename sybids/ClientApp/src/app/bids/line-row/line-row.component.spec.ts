@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BidComponent } from './bid.component';
+import { LineRowComponent } from './line-row.component';
 
-describe('BidComponent', () => {
-  let component: BidComponent;
-  let fixture: ComponentFixture<BidComponent>;
+describe('LineRowComponent', () => {
+  let component: LineRowComponent;
+  let fixture: ComponentFixture<LineRowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BidComponent ]
+      declarations: [ LineRowComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BidComponent);
+    fixture = TestBed.createComponent(LineRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

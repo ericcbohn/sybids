@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { BidService } from '../shared/bid.service';
+import { LineService } from '../shared/line.service';
 import { LineModel } from '../shared/line.model';
 
 @Component({
-  selector: 'app-bid',
-  templateUrl: './bid.component.html',
-  styleUrls: ['./bid.component.css']
+  selector: 'app-line',
+  templateUrl: './line.component.html',
+  styleUrls: ['./line.component.css']
 })
-export class BidComponent implements OnInit {
+export class LineComponent implements OnInit {
   lines: LineModel[];
   selectedLine: LineModel;
   addingLine = false;
   error: any;
   showNgFor = false;
 
-  constructor(private bidService: BidService) { }
+  constructor(private lineService: LineService) { }
 
   getAllLines(): void {
-    this.bidService.getAllLines()
+    this.lineService.getAllLines()
                    .then(lines => { 
                      this.lines = lines;
-                     console.log(this.lines);
                    })
                    .catch(error => this.error = error);
   }
@@ -37,7 +36,7 @@ export class BidComponent implements OnInit {
 
   deleteLine(line: LineModel, event: any): void {
     event.stopPropagation();
-    this.bidService.delete(line)
+    this.lineService.delete(line)
                    .then(res => {
                      this.lines = this.lines.filter(l => l !== line);
                      if(this.selectedLine === line) { this.selectedLine = null; }
@@ -55,6 +54,6 @@ export class BidComponent implements OnInit {
   }
 
   // gotoDetail(): void {
-  //   this.router.navigate(['/detail', this.selectedLine.lineId]);
+  //   this.router.navigate(['/detail', this.selectedLine.lineid]);
   // }
 }
