@@ -2,67 +2,60 @@
 
 <div class="container">
   <div class="row">
+    <form method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <div class="col-md-10">
+          <p>Upload pairing csv file:</p>
+          <input type="file" (change)="csvSelected($event)" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-10">
+          <button type="button" (click)="submitCsv()">Submit</button> 
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
       <div class="col-sm-8">
           <div [class.hidden]="lines" class="alert alert-info">
-              Please Wait...</div>
-          <div class="alert alert-success" style="display:none;">
-              <span class="glyphicon glyphicon-ok"></span> Drag row to change Order</div>
+              <p>Please Wait...</p> 
+          </div>
           <table class="table">
               <thead>
-                  <tr>
-                      <th>Line ID</th>
-                      <th>Base</th>
-                      <th>Position</th>
-                      <th>Block</th>
-                      <th>Credit</th>
-                  </tr>
               </thead>
               <tbody class="lines">
                 <!-- https://angular.io/api/common/NgForOf -->
-                <ng-template ngFor let-line [ngForOf]="lines" let-i="index">
-                  <tr (click)="onSelect(line)" [class.selected]="line === selectedLine">
-                    <td>{{ line.lineid }}</td>
-                    <td>{{ line.base }}</td>
-                    <td>{{ line.position }}</td>
-                    <td>{{ line.blockminutes }}</td>
-                    <td>{{ line.creditminutes }}</td>
-                    <!-- <td><button class="delete-button" (click)="deleteLine(line, $event)">Delete</button></td> -->
-                  </tr>
-                  <app-line-month [line]="selectedLine" [lineIndex]="i"></app-line-month>
-                </ng-template>
+                <tr *ngFor="let line of lines">
+                  <td>
+                    <div>
+                      <div><p>Line ID: {{ line.lineid }}</p></div>
+                      <div><p>Days Off: {{ line.numdaysoff }}</p></div>
+                      <div><p>TAFB: {{ line.tafb }}</p></div>
+                    </div> 
+                    <div>
+                      <div><p>Block: {{ line.blockminutes }}</p></div>
+                      <div><p>Credit: {{ line.creditminutes }}</p></div>
+                    </div>
+                  </td>
+                  <td *ngFor="let day of line.days">
+                    <div *ngIf="!day.isoff; else showPairing">
+                      <div><p>Report: {{ day.reporttimeutc }}</p></div>
+                      <div *ngFor="let pairing of day.pairings">
+                        <span><p>Flight: {{ pairing.flight }}</p></span>
+                        <span><p>{{ pairing.departure }} {{ pairing.destination }}</p></span>
+                        <span *ngIf="pairing.isdeadhead">*</span>
+                      </div>
+                      <div><p>Release: {{ day.releasetimeutc }}</p></div>
+                    </div>
+                    <ng-template #showPairing>
+                      <span><p>OFF</p></span>
+                    </ng-template>
+                  </td>
+                </tr> 
               </tbody>
           </table>
       </div>
   </div>
 </div>
-
 <div class="error" *ngIf="error">{{ error }}</div>
-<button (click)="addLine()">Add New Line</button>
-<div *ngIf="addingLine">
-  <p>line-detail component goes here</p>
-  <!-- <line-detail (close)="close($event)"></line-detail> -->
-</div>
-
-<div *ngIf="selectedLine">
-  <h2>Line {{ selectedLine.lineid }} has been selected.</h2>
-  <!-- <button (click)="gotoDetail()">View Details</button> -->
-</div>
-
-<div>
-  <style>.hidden { visibility: hidden }</style>
-  <h4>ngFor Features</h4>
-  <button (click)="showNgFor=!showNgFor">{{ showNgFor ? 'Hide' : 'Show' }} ngFor Features</button>
-  <table [class.hidden]="!showNgFor">
-    <tbody>
-      <tr *ngFor="let line of lines; let ix = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
-        <td>{{line.lineid}}</td>
-        <td>{{ix}}</td>
-        <td>{{c}}</td>
-        <td>{{e}}</td>
-        <td>{{o}}</td>
-        <td>{{f}}</td>
-        <td>{{l}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>

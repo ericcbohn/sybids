@@ -5,6 +5,8 @@ namespace sybids.Models {
     public enum Airport { CUN,DEN,IFP,JFK,LAS,LAX,MCO,MSP,RSW,ZIH }
     
     public enum Position { CA, FO }
+
+    //public enum Equipment { 737, 738 }
 }
 
 // public static string CUN = "CUN";

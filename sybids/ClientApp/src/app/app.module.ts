@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarModule } from 'angular-calendar';
-import { DemoUtilsModule } from './demo-utils/module';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -18,8 +16,8 @@ import { LineComponent } from './bids/line/line.component';
 
 import { LineService } from './bids/shared/line.service';
 import { AdminComponent } from './bids/admin/admin.component';
-import { LineMonthComponent } from './bids/line-month/line-month.component';
-import { LineRowComponent } from './bids/line-row/line-row.component';
+import { LineDayComponent } from './bids/line-day/line-day.component';
+import { LinePairingComponent } from './bids/line-pairing/line-pairing.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +28,8 @@ import { LineRowComponent } from './bids/line-row/line-row.component';
     FetchDataComponent,
     LineComponent,
     AdminComponent,
-    LineMonthComponent,
-    LineRowComponent
+    LineDayComponent,
+    LinePairingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,8 +39,6 @@ import { LineRowComponent } from './bids/line-row/line-row.component';
     CommonModule,
     HttpModule,
     FormsModule,
-    DemoUtilsModule,
-    CalendarModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'admin', component: AdminComponent },

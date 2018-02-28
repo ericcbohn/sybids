@@ -1,0 +1,10 @@
+<table class="table">
+  <thead>
+  </thead>
+  <tbody class="pairing">
+    <tr *ngFor="let pairing of pairings">
+      <span *ngIf="pairing.isdeadhead">* </span>
+      <span>{{ pairing.flight }} {{ pairing.departure }} {{ pairing.destination }}</span>
+    </tr>
+  </tbody>
+</table>

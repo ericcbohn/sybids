@@ -5,16 +5,14 @@ import { LineModel } from './line.model';
 
 @Injectable()
 export class LineService {
-  private BID_URL = '/api/bid';
+  private BID_URL = '/api/bid/';
     
   constructor(private http: Http) { }
 
   getAllLines(): Promise<Array<LineModel>> {
     return this.http.get(this.BID_URL)
                     .toPromise()
-                    .then((response) => {
-                      return response.json() as LineModel[];
-                    })
+                    .then(res => res.json())
                     .catch(this.handleError);
   }
 
@@ -23,17 +21,17 @@ export class LineService {
   }
 
   save(line: LineModel): Promise<LineModel> {
-    if(line.datecreatedutc) {
-      return this.put(line);
-    }
-    line.datecreatedutc = Date.prototype.toUTCString();
+    // if(line._id !== null) {
+    //   console.log("put " + line._id);
+    //   return this.put(line);
+    // }
+    console.log("post");
     return this.post(line);
   }
 
   delete(line: LineModel): Promise<Response> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = '${this.BID_URL}/${line.lineid}';
-
+    const url = this.BID_URL + line.lineid;
     return this.http.delete(url, { headers: headers })
                     .toPromise()
                     .catch(this.handleError);
@@ -41,7 +39,7 @@ export class LineService {
 
   private put(line: LineModel): Promise<LineModel> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = '${this.BID_URL}/${line.lineid}';
+    const url = this.BID_URL + line.lineid;
 
     return this.http.put(url, JSON.stringify(line), { headers: headers})
                     .toPromise()
@@ -54,7 +52,7 @@ export class LineService {
 
     return this.http.post(this.BID_URL, JSON.stringify(line), {headers: headers})
                     .toPromise()
-                    .then(res => res.json())
+                    .then(res => res)
                     .catch(this.handleError);
   }
 

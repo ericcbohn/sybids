@@ -14,64 +14,120 @@ namespace sybids.Repo {
             _context = new BidContext(settings);
         }
 
-        public async Task<IEnumerable<LineModel>> GetAllLines() {
-            var documents = await _context.Lines.Find(_ => true).ToListAsync();
+        public async Task<IEnumerable<BidModel>> GetBids() {
+            var documents = await _context.Bid.Find(_ => true).ToListAsync();
             return documents;
         }
-
-        public async Task<LineModel> GetLine(int lineId) {
-            var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
+        public async Task<BidModel> GetBid(DateTime bidDate) {
+            var filter = Builders<BidModel>.Filter.Eq("biddate", bidDate);
             try { 
-                return await _context.Lines.Find(filter).FirstOrDefaultAsync();
-            }
-            catch(Exception ex) {
-                // log or manage exception
-                throw ex;
-            }
-        }
-
-        public async Task AddLine(LineModel line) {
-            try {
-                await _context.Lines.InsertOneAsync(line);
-            }
-            catch(Exception ex) {
-                //log or manage exception
-                throw ex;
-            }
-        }
-
-        public async Task<bool> UpdateLine(int lineId, LineModel line) {
-            try {
-                ReplaceOneResult actionResult = await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(lineId), line, new UpdateOptions { IsUpsert = true });
-                return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
+                return await _context.Bid.Find(filter).FirstOrDefaultAsync();
             }
             catch(Exception ex) {
                 // log or manage
                 throw ex;
             }
         }
-
-        public async Task<bool> RemoveLine(int lineId) {
-            var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
+        public async Task AddBid(BidModel bid) { 
             try {
-                DeleteResult actionResult = await _context.Lines.DeleteOneAsync(filter);
-                return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
+                await _context.Bid.InsertOneAsync(bid);
+            }
+            catch (Exception ex) {
+                // log or manage
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<PairingModel>> GetPairings() {
+            var documents = await _context.Pairing.Find(_ => true).ToListAsync();
+            return documents;
+        }
+        public async Task<PairingModel> GetPairing(string pairingId) { 
+            var filter = Builders<PairingModel>.Filter.Eq("pairingid", pairingId);
+            try { 
+                return await _context.Pairing.Find(filter).FirstOrDefaultAsync();
             }
             catch(Exception ex) {
                 // log or manage
                 throw ex;
             }
         }
-
-        public async Task<bool> RemoveAllLines() {
+        public async Task AddPairing(PairingModel pairing) {
             try {
-                DeleteResult actionResult = await _context.Lines.DeleteManyAsync(new BsonDocument());
-                return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
+                await _context.Pairing.InsertOneAsync(pairing);
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 // log or manage
                 throw ex;
             }
         }
+
+        // public Task<bool> UpdatePairing(int pairingId, PairingModel pairing);
+        // public Task<bool> RemovePairing(int pairingId);
+        // public Task<bool> RemoveAllPairings();
     }
 }
+
+#region old model
+
+        // public async Task<IEnumerable<LineModel>> GetAllLines() {
+        //     var documents = await _context.Lines.Find(_ => true).ToListAsync();
+        //     return documents;
+        // }
+
+        // public async Task<LineModel> GetLine(int lineId) {
+        //     var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
+        //     try { 
+        //         return await _context.Lines.Find(filter).FirstOrDefaultAsync();
+        //     }
+        //     catch(Exception ex) {
+        //         // log or manage exception
+        //         throw ex;
+        //     }
+        // }
+
+        // public async Task AddLine(LineModel line) {
+        //     try {
+        //         await _context.Lines.InsertOneAsync(line);
+        //     }
+        //     catch(Exception ex) {
+        //         //log or manage exception
+        //         throw ex;
+        //     }
+        // }
+
+        // public async Task<bool> UpdateLine(int lineId, LineModel line) {
+        //     try {
+        //         ReplaceOneResult actionResult = await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(lineId), line);//, new UpdateOptions { IsUpsert = true });
+        //         return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
+        //     }
+        //     catch(Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
+
+        // public async Task<bool> RemoveLine(int lineId) {
+        //     var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
+        //     try {
+        //         DeleteResult actionResult = await _context.Lines.DeleteOneAsync(filter);
+        //         return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
+        //     }
+        //     catch(Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
+
+        // public async Task<bool> RemoveAllLines() {
+        //     try {
+        //         DeleteResult actionResult = await _context.Lines.DeleteManyAsync(new BsonDocument());
+        //         return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
+        //     }
+        //     catch(Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
+
+#endregion
