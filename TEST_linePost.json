@@ -1,8 +1,412 @@
 {
-  "lineid":"2002",
-  "base":"MSP",
-  "position":"FO",
-  "blockminutes":"5100",
-  "creditminutes":"5100",
-  "days":[]
+	"lineid":1001,
+	"base":"MSP",
+	"position":"CA",
+	"numdaysoff":18,
+	"tafbminutes":7648,
+	"blockminutes":4504,
+	"creditminutes":5670,
+	"days":[
+		{
+		"day": 2,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 3,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 4,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 5,
+		"isoff": false,
+		"reporttimeutc": "07:45",
+		"releasetimeutc": "18:05",
+		"pairings": [
+			{
+				"flight":"587",
+				"departure":"MSP",
+				"destination":"CUN",
+				"isdeadhead":false
+			},
+			{
+				"flight":"588",
+				"departure":"CUN",
+				"destination":"MSP",
+				"isdeadhead":false
+			}]
+		},
+		{
+		"day": 6,
+		"isoff": false,
+		"reporttimeutc": "06:10",
+		"releasetimeutc": "15:44",
+		"pairings": [
+			{
+				"flight":"313",
+				"departure":"MSP",
+				"destination":"MIA",
+				"isdeadhead":false
+			},
+			{
+				"flight":"314",
+				"departure":"MIA",
+				"destination":"MSP",
+				"isdeadhead":false
+			}]
+		},
+		{
+		"day": 7,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 8,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 9,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 10,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 11,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 12,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 13,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 14,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 15,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 16,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 17,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 18,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 19,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 20,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 21,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 22,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 23,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 24,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 25,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 26,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 27,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 28,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 29,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 30,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		},
+		{
+		"day": 31,
+		"isoff": true,
+		"reporttimeutc": "",
+		"releasetimeutc": "",
+		"pairings": [
+			{
+				"flight":"",
+				"departure":"",
+				"destination":"",
+				"isdeadhead":""
+			}]
+		}]
 }

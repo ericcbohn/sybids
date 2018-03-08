@@ -16,8 +16,8 @@ import { LineComponent } from './bids/line/line.component';
 
 import { LineService } from './bids/shared/line.service';
 import { AdminComponent } from './bids/admin/admin.component';
-import { LineDayComponent } from './bids/line-day/line-day.component';
-import { LinePairingComponent } from './bids/line-pairing/line-pairing.component';
+// import { LineDayComponent } from './bids/line-day/line-day.component';
+// import { LinePairingComponent } from './bids/line-pairing/line-pairing.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +27,9 @@ import { LinePairingComponent } from './bids/line-pairing/line-pairing.component
     CounterComponent,
     FetchDataComponent,
     LineComponent,
-    AdminComponent,
-    LineDayComponent,
-    LinePairingComponent
+    AdminComponent
+    // LineDayComponent,
+    // LinePairingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

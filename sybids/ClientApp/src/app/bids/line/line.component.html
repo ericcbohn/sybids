@@ -10,13 +10,19 @@
         </div>
       </div>
       <div class="form-group">
+          <div class="col-md-10">
+            <p>Upload "routes only" txt file:</p>
+            <input type="file" (change)="txtSelected($event)" />
+          </div>
+        </div>
+      <div class="form-group">
         <div class="col-md-10">
-          <button type="button" (click)="submitCsv()">Submit</button> 
+          <button type="button">Submit</button> 
         </div>
       </div>
     </form>
   </div>
-  <div class="row">
+  <!-- <div class="row">
       <div class="col-sm-8">
           <div [class.hidden]="lines" class="alert alert-info">
               <p>Please Wait...</p> 
@@ -25,7 +31,6 @@
               <thead>
               </thead>
               <tbody class="lines">
-                <!-- https://angular.io/api/common/NgForOf -->
                 <tr *ngFor="let line of lines">
                   <td>
                     <div>
@@ -56,6 +61,6 @@
               </tbody>
           </table>
       </div>
-  </div>
+  </div> -->
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>

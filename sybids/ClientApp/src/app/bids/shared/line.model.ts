@@ -46,24 +46,20 @@ export interface LegModel {
     carrier: string;
 }
 
-// export interface LineModel {
-//     lineid: string;
-//     base: string;
-//     position: string;
-//     numdaysoff: string;
-//     tafb: string;
-//     blockminutes: string;
-//     creditminutes: string;
-//     days: DayModel[];
-// }
+export interface LineModel {
+    lineid: string;
+    base: string;
+    equipment: string;
+    position: string;
+    blockminutes: string;
+    creditminutes: string;
+    days: DayModel[];
+}
 
-// export interface DayModel {
-//     day: string;
-//     isoff: string;
-//     reporttimeutc: string;
-//     releasetimeutc: string;
-//     pairings: PairingModel[];
-// }
+export interface DayModel {
+    day: string;
+    pairingid: string[];
+}
 
 // export interface PairingModel {
 //     flight: string;
