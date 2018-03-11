@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{0958A480-01C4-46B7-8098-4E35C87A81B4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sybids/Controllers/BidController.cs">
+    <Files>
+      <File FileName="sybids/Controllers/LineController.cs" Line="14" Column="1591" />
+      <File FileName="sybids/Controllers/BidController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ericbohn/Documents/Projects/sybids/sybids/Models/JsonConverters.cs" relfile="sybids/Models/JsonConverters.cs" line="46" column="1" />
+      <Breakpoint file="/Users/ericbohn/Documents/Projects/sybids/sybids/Controllers/LineController.cs" relfile="sybids/Controllers/LineController.cs" line="24" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.sybids PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -28,3 +28,4 @@
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.AssemblyInfo.cs
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.dll
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.pdb
+/Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.csprojResolveAssemblyReference.cache

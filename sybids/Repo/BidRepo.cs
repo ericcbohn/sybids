@@ -8,40 +8,17 @@ using MongoDB.Bson;
 
 namespace sybids.Repo {
     public class BidRepo : IBidRepo {
-        private readonly BidContext _context = null;
+        private readonly MongoContext _context = null;
 
         public BidRepo(IOptions<Settings> settings) {
-            _context = new BidContext(settings);
-        }
-
-        public async Task<IEnumerable<BidModel>> GetBids() {
-            var documents = await _context.Bid.Find(_ => true).ToListAsync();
-            return documents;
-        }
-        public async Task<BidModel> GetBid(DateTime bidDate) {
-            var filter = Builders<BidModel>.Filter.Eq("biddate", bidDate);
-            try { 
-                return await _context.Bid.Find(filter).FirstOrDefaultAsync();
-            }
-            catch(Exception ex) {
-                // log or manage
-                throw ex;
-            }
-        }
-        public async Task AddBid(BidModel bid) { 
-            try {
-                await _context.Bid.InsertOneAsync(bid);
-            }
-            catch (Exception ex) {
-                // log or manage
-                throw ex;
-            }
+            _context = new MongoContext(settings);
         }
 
         public async Task<IEnumerable<PairingModel>> GetPairings() {
             var documents = await _context.Pairing.Find(_ => true).ToListAsync();
             return documents;
         }
+
         public async Task<PairingModel> GetPairing(string pairingId) { 
             var filter = Builders<PairingModel>.Filter.Eq("pairingid", pairingId);
             try { 
@@ -52,15 +29,52 @@ namespace sybids.Repo {
                 throw ex;
             }
         }
+
         public async Task AddPairing(PairingModel pairing) {
-            try {
-                await _context.Pairing.InsertOneAsync(pairing);
-            }
-            catch (Exception ex) {
-                // log or manage
-                throw ex;
-            }
+            var deleteme = Builders<PairingModel>.Filter.Eq("pairingid", 1);
+            await _context.Pairing.CountAsync(deleteme);
+            // try {
+            //     await _context.Pairing.InsertOneAsync(pairing);
+            // }
+            // catch (Exception ex) {
+            //     // log or manage
+            //     throw ex;
+            // }
         }
+
+        public async Task AddLine(LineModel line) {
+            var deleteme = Builders<LineModel>.Filter.Eq("lineid", 1);
+            await _context.Line.CountAsync(deleteme);
+            // try {
+            //     await _context.Line.InsertOneAsync(line);
+            // }
+            // catch (Exception ex) {
+            //     // log or manage
+            //     throw ex;
+            // }
+        }
+
+        // public async Task AddPairings(List<PairingModel> pairings) {
+        //     var deleteme = Builders<PairingModel>.Filter.Eq("pairingid", 1);
+        //     try { await _context.Pairing.CountAsync(deleteme);
+        //         //await _context.Pairing.InsertManyAsync(pairings);
+        //     }
+        //     catch (Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
+
+        // public async Task AddLines(List<LineModel> lines) {
+        //     var deleteme = Builders<LineModel>.Filter.Eq("lineid", 1);
+        //     try { await _context.Line.CountAsync(deleteme);
+        //         //await _context.Line.InsertManyAsync(lines);
+        //     }
+        //     catch (Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
 
         // public Task<bool> UpdatePairing(int pairingId, PairingModel pairing);
         // public Task<bool> RemovePairing(int pairingId);
@@ -69,6 +83,30 @@ namespace sybids.Repo {
 }
 
 #region old model
+
+        // public async Task<IEnumerable<BidModel>> GetBids() {
+        //     var documents = await _context.Bid.Find(_ => true).ToListAsync();
+        //     return documents;
+        // }
+        // public async Task<BidModel> GetBid(DateTime bidDate) {
+        //     var filter = Builders<BidModel>.Filter.Eq("biddate", bidDate);
+        //     try { 
+        //         return await _context.Bid.Find(filter).FirstOrDefaultAsync();
+        //     }
+        //     catch(Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
+        // public async Task AddBid(BidModel bid) { 
+        //     try {
+        //         await _context.Bid.InsertOneAsync(bid);
+        //     }
+        //     catch (Exception ex) {
+        //         // log or manage
+        //         throw ex;
+        //     }
+        // }
 
         // public async Task<IEnumerable<LineModel>> GetAllLines() {
         //     var documents = await _context.Lines.Find(_ => true).ToListAsync();

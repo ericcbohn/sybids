@@ -47,6 +47,7 @@ export interface LegModel {
 }
 
 export interface LineModel {
+    // _id: MongoObjId;
     lineid: string;
     base: string;
     equipment: string;
@@ -57,13 +58,13 @@ export interface LineModel {
 }
 
 export interface DayModel {
+    month: string;
     day: string;
     pairingid: string[];
 }
 
-// export interface PairingModel {
-//     flight: string;
-//     departure: string;
-//     destination: string;
-//     isdeadhead: string;
-// }
+export interface RawDayModel {
+  month: string;
+  day: string;
+  dayIndex: number;
+}

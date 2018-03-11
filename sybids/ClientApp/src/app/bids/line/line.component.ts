@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LineService } from '../shared/line.service';
-import { LineModel, PairingModel, DutyModel, LegModel, DayModel } from '../shared/line.model';
+import { RawDayModel, LineModel, PairingModel, DutyModel, LegModel, DayModel } from '../shared/line.model';
 import { LOCALE_DATA } from '@angular/common/src/i18n/locale_data';
 import { getMonth } from 'date-fns';
 
@@ -10,14 +10,15 @@ import { getMonth } from 'date-fns';
   styleUrls: ['./line.component.css']
 })
 export class LineComponent implements OnInit {
-  lines: LineModel[];
+  lines: LineModel[] = [];
+  pairings: PairingModel[] = [];
   error: any;
 
   constructor(private lineService: LineService) { }
 
   csvLoadHandler(result: string): void {
     let allTextLines = result.split(/\r\n|\n/);
-    let pairings: PairingModel[] = []
+    //let pairings: PairingModel[] = []
     let pairing: PairingModel;
     let duty: DutyModel;
     let leg: LegModel;
@@ -42,7 +43,7 @@ export class LineComponent implements OnInit {
             tafb: data[13],
             duty: []
           };
-          pairings.push(pairing);
+          this.pairings.push(pairing);
           dutyIndex = -1;
           break;
         case 'DTY':
@@ -59,7 +60,7 @@ export class LineComponent implements OnInit {
             restType: data[10],
             leg: []
           }
-          pairings[pairingIndex].duty.push(duty);
+          this.pairings[pairingIndex].duty.push(duty);
           break;
         case 'LEG':
           leg = {
@@ -74,7 +75,7 @@ export class LineComponent implements OnInit {
             block: data[10],
             carrier: data[13]
           }
-          pairings[pairingIndex].duty[dutyIndex].leg.push(leg);
+          this.pairings[pairingIndex].duty[dutyIndex].leg.push(leg);
           break;
         default: // end of file
           break;
@@ -86,15 +87,6 @@ export class LineComponent implements OnInit {
     let reader = new FileReader();
     reader.readAsText(evt.target.files[0]);
     reader.onload = () => this.csvLoadHandler(reader.result);
-  }
-
-  rotateArray(matrix) {
-    let result = [];
-    for(let i = 0; i < matrix[0].length; i++) {
-        let row = matrix.map(e => e[i]).reverse();
-        result.push(row);
-    }
-    return result;
   }
 
   getDayIndexes(rawDays: string) {
@@ -127,12 +119,16 @@ export class LineComponent implements OnInit {
     // O(n)
     for (let i = 0; i < dayIndexes.length; i++) {
       let dayModel = {
+        month: '',
         day: '',
         dayIndex: dayIndexes[i]
       };
       let day: string = '';
       for (let x = 0; x < 5; x++) { day = day + rawDays[dayIndexes[i]+x]; }
-      dayModel.day = day;
+      let monthStr = day.match(/^\D+/);
+      let dayNum = day.match(/\d+$/);
+      dayModel.month = monthStr.length > 0 ? monthStr[0] : '0';
+      dayModel.day = dayNum.length > 0 ? dayNum[0] : '0';
       days.push(dayModel);
     }
     return days;
@@ -195,6 +191,7 @@ export class LineComponent implements OnInit {
       // parse days
       for (let x = 0; x < days.length; x++) { // for each day
         let day: DayModel = { 
+          month: days[x].month,
           day: days[x].day,
           pairingid: []
         };
@@ -233,13 +230,23 @@ export class LineComponent implements OnInit {
         i = i+4;
       }
     }
-    let lines: LineModel[] = this.parseLines(rawLines, this.getDays(days));
+    this.lines = this.parseLines(rawLines, this.getDays(days));
   }
 
   txtSelected(evt: any): void {  
     let reader = new FileReader();
     reader.readAsText(evt.target.files[0]);
     reader.onload = () => this.txtLoadHandler(reader.result);
+  }
+
+  saveBidPack(): void {
+    //this.lineService.saveBidPack(this.lines, this.pairings);
+    for(let i = 0; i < this.lines.length; i++) {
+        this.lineService.saveLine(this.lines[i]);
+    }
+    for(let i = 0; i < this.pairings.length; i++) {
+        this.lineService.savePairing(this.pairings[i]);
+    }
   }
 
   getAllLines(): void {
@@ -253,10 +260,6 @@ export class LineComponent implements OnInit {
   }
 }
 
-interface RawDayModel {
-  day: string,
-  dayIndex: number
-};
 
 // PRGLABEL,Pg#,Eff,Thru,Frq,Base,Days,Duties,C/J,Block,Credit,Lndgs,Dhds,TAFB,NumCA,NumFO,NumFA
 // DTYLABEL,Duty#,Legs,Brief,Debrief,TOD,Block,DhdPay,Credit,Rest,RestType,FDPDutyTime,FDPDutyLimit,FDPLegTally,StartTaxiDur,EndTaxiDur,StartCustoms,EndCustoms,NoMinGuar
