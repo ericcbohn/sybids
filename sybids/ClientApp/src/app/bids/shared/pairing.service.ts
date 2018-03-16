@@ -1,48 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-import { LineModel } from './line.model';
+import { PairingModel } from '../shared/line.model';
 
 @Injectable()
-export class LineService {
-  private LINE_URL = '/api/line/';
-    
+export class PairingService {
+  private PAIRING_URL = '/api/pairing/';
+
   constructor(private http: Http) { }
 
-  save(line: LineModel) {
-    console.log(JSON.stringify(line));
+  save(pairing: PairingModel) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    return this.http.post(this.LINE_URL, JSON.stringify(line), {headers: headers})
+    return this.http.post(this.PAIRING_URL, JSON.stringify(pairing), {headers: headers})
                     .toPromise()
                     .then(res => res)
                     .catch(this.handleError);
   }
 
-  getLine(lineId: string): Promise<LineModel> {
-    return this.http.get(this.LINE_URL + lineId)
+  getPairing(pairingId: string): Promise<PairingModel> {
+    return this.http.get(this.PAIRING_URL + pairingId)
                     .toPromise()
                     .then(res => res.json())
                     .catch(this.handleError);
   }
 
-  getLines(): Promise<Array<LineModel>> {
-    return this.http.get(this.LINE_URL)
+  getPairings(): Promise<Array<PairingModel>> {
+    return this.http.get(this.PAIRING_URL)
                     .toPromise()
                     .then(res => res.json())
                     .catch(this.handleError);
   }
 
-  put(line: LineModel): Promise<LineModel> {
+  put(pairing: PairingModel): Promise<PairingModel> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.LINE_URL + line.lineid;
-    return this.http.put(url, JSON.stringify(line), { headers: headers})
+    const url = this.PAIRING_URL + pairing.pairingId;
+    return this.http.put(url, JSON.stringify(pairing), { headers: headers})
                     .toPromise()
-                    .then(() => line)
+                    .then(() => pairing)
                     .catch(this.handleError);
   }
 
-  delete(line: LineModel): Promise<Response> {
+  delete(pairing: PairingModel): Promise<Response> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.LINE_URL + line.lineid;
+    const url = this.PAIRING_URL + pairing.pairingId;
     return this.http.delete(url, { headers: headers })
                     .toPromise()
                     .catch(this.handleError);

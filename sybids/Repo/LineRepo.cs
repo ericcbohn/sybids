@@ -3,11 +3,12 @@ using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using sybids.Models;
 using sybids.Interfaces;
+using sybids.Repo.Context;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 
-namespace sybids.Repo 
+namespace sybids.Repo
 {
     public class LineRepo : ILineRepo 
     {
@@ -46,9 +47,8 @@ namespace sybids.Repo
             }
         }
 
-        public async Task<LineModel> GetLine(string lineId)
+        public async Task<LineModel> GetLine(int lineId)
         {
-            if(string.IsNullOrEmpty(lineId)) throw new ArgumentNullException(nameof(lineId));
             var filter = Builders<LineModel>.Filter.Eq("lineid", lineId);
             try { 
                 return await _context.Lines.Find(filter).FirstOrDefaultAsync();

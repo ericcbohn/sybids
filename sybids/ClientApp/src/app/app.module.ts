@@ -10,26 +10,19 @@ import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LineComponent } from './bids/line/line.component';
 
 import { LineService } from './bids/shared/line.service';
-import { AdminComponent } from './bids/admin/admin.component';
-// import { LineDayComponent } from './bids/line-day/line-day.component';
-// import { LinePairingComponent } from './bids/line-pairing/line-pairing.component';
+import { PairingService } from './bids/shared/pairing.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     FetchDataComponent,
-    LineComponent,
-    AdminComponent
-    // LineDayComponent,
-    // LinePairingComponent
+    LineComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,13 +34,11 @@ import { AdminComponent } from './bids/admin/admin.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'admin', component: AdminComponent },
       { path: 'line', component: LineComponent },
-      { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
-  providers: [LineService],
+  providers: [LineService, PairingService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,7 @@ namespace sybids.Interfaces
     {
         Task AddLine(LineModel line);
         Task AddLines(IEnumerable<LineModel> lines);
-        Task<LineModel> GetLine(string lineId); 
+        Task<LineModel> GetLine(int lineId); 
         Task<IEnumerable<LineModel>> GetLines();
         Task<bool> RemoveLine(int lineId);
         Task<bool> RemoveAllLines();

@@ -6,7 +6,7 @@
 // using Microsoft.Extensions.DependencyInjection;
 // using sybids.Models;
 
-// namespace sybids.Repo {
+// namespace sybids.Repo.Context {
 //     public class BidsSqlContext {
 //         private string ConnectionString { get; set; }
 

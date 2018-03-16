@@ -1691,25 +1691,6 @@
           "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {}
         }
       },
-      "Microsoft.DotNet.InternalAbstractions/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.AppContext": "4.1.0",
-          "System.Collections": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.IO.FileSystem": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
-        },
-        "compile": {
-          "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
-        }
-      },
       "Microsoft.DotNet.PlatformAbstractions/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -3119,36 +3100,6 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "NUnit/3.9.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "System.Runtime.Loader": "4.3.0",
-          "System.Threading.Thread": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard1.6/nunit.framework.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/nunit.framework.dll": {}
-        }
-      },
-      "NUnit3TestAdapter/3.9.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.DotNet.InternalAbstractions": "1.0.0",
-          "System.ComponentModel.EventBasedAsync": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Process": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Xml.XPath.XmlDocument": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "build": {
-          "build/netcoreapp1.0/NUnit3TestAdapter.props": {}
-        }
-      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -3638,13 +3589,13 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.ComponentModel.EventBasedAsync/4.3.0": {
+      "System.ComponentModel.EventBasedAsync/4.0.11": {
         "type": "package",
         "dependencies": {
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
         },
         "compile": {
           "ref/netstandard1.3/System.ComponentModel.EventBasedAsync.dll": {}
@@ -3802,30 +3753,30 @@
           }
         }
       },
-      "System.Diagnostics.Process/4.3.0": {
+      "System.Diagnostics.Process/4.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "Microsoft.Win32.Registry": "4.3.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
-          "runtime.native.System": "4.3.0"
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "Microsoft.Win32.Registry": "4.0.0",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Thread": "4.0.0",
+          "System.Threading.ThreadPool": "4.0.10",
+          "runtime.native.System": "4.0.0"
         },
         "compile": {
           "ref/netstandard1.4/System.Diagnostics.Process.dll": {}
@@ -4611,12 +4562,12 @@
           }
         }
       },
-      "System.Runtime.Loader/4.3.0": {
+      "System.Runtime.Loader/4.0.0": {
         "type": "package",
         "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0"
+          "System.IO": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Runtime": "4.1.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.Loader.dll": {}
@@ -5394,19 +5345,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "System.Xml.XPath.XmlDocument/4.3.0": {
+      "System.Xml.XPath.XmlDocument/4.0.1": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XPath": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XPath": "4.0.1",
+          "System.Xml.XmlDocument": "4.0.1"
         },
         "compile": {
           "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
@@ -5430,12 +5381,98 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "xunit/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "xunit.analyzers": "0.7.0",
+          "xunit.assert": "[2.3.1]",
+          "xunit.core": "[2.3.1]"
+        }
+      },
+      "xunit.abstractions/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.analyzers/0.7.0": {
+        "type": "package"
+      },
+      "xunit.assert/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.3.1]",
+          "xunit.extensibility.execution": "[2.3.1]"
+        },
+        "build": {
+          "build/xunit.core.props": {},
+          "build/xunit.core.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/xunit.core.props": {},
+          "buildMultiTargeting/xunit.core.targets": {}
+        }
+      },
+      "xunit.extensibility.core/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "xunit.abstractions": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.core.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "xunit.extensibility.core": "[2.3.1]"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.visualstudio/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "15.0.0"
+        },
+        "build": {
+          "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
+        }
+      },
       "sybids/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.AspNetCore.SpaServices.Extensions": "2.0.0-rc1-final",
+          "Microsoft.NETCore.App": "2.0.0",
           "MongoDB.Driver": "2.5.0",
           "Newtonsoft.Json": "10.0.3",
           "mysql.data": "6.10.6"
@@ -6776,17 +6813,6 @@
         "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
         "microsoft.data.sqlite.core.2.0.0.nupkg.sha512",
         "microsoft.data.sqlite.core.nuspec"
-      ]
-    },
-    "Microsoft.DotNet.InternalAbstractions/1.0.0": {
-      "sha512": "b9GkiAWYDH98gtGZTa9qNW5Yi0e4Uq2/c5kBnPOldmfkp5cItZTFS3qMFguvqm06p+Gw/EJquFUyqYvkLthzhA==",
-      "type": "package",
-      "path": "microsoft.dotnet.internalabstractions/1.0.0",
-      "files": [
-        "lib/net451/Microsoft.DotNet.InternalAbstractions.dll",
-        "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll",
-        "microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
-        "microsoft.dotnet.internalabstractions.nuspec"
       ]
     },
     "Microsoft.DotNet.PlatformAbstractions/2.0.3": {
@@ -8658,59 +8684,6 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "NUnit/3.9.0": {
-      "sha512": "0zKA0MB0bRKqPyInRlTgKvZTx/MhJGGnSUJ4sjx68JnfVGbH0Tp+Xq7uW+HVw0B5gCN8s0pUQlrbC3mjGyUU8A==",
-      "type": "package",
-      "path": "nunit/3.9.0",
-      "files": [
-        "CHANGES.md",
-        "LICENSE.txt",
-        "NOTICES.txt",
-        "lib/monoandroid/nunit.framework.dll",
-        "lib/monoandroid/nunit.framework.xml",
-        "lib/net20/NUnit.System.Linq.dll",
-        "lib/net20/nunit.framework.dll",
-        "lib/net20/nunit.framework.xml",
-        "lib/net35/nunit.framework.dll",
-        "lib/net35/nunit.framework.xml",
-        "lib/net40/nunit.framework.dll",
-        "lib/net40/nunit.framework.xml",
-        "lib/net45/nunit.framework.dll",
-        "lib/net45/nunit.framework.xml",
-        "lib/netstandard1.3/nunit.framework.dll",
-        "lib/netstandard1.3/nunit.framework.xml",
-        "lib/netstandard1.6/nunit.framework.dll",
-        "lib/netstandard1.6/nunit.framework.xml",
-        "lib/uap/nunit.framework.dll",
-        "lib/uap/nunit.framework.xml",
-        "lib/xamarin.ios/nunit.framework.dll",
-        "lib/xamarin.ios/nunit.framework.xml",
-        "nunit.3.9.0.nupkg.sha512",
-        "nunit.nuspec"
-      ]
-    },
-    "NUnit3TestAdapter/3.9.0": {
-      "sha512": "mtJZ7ejIVZliD0NI0HA3z1VgvBQVmwbnMOF2Lvg7j0MBJYXFOdBgNZcNZHFa8/lbgeckGxV4H93e+njHRbBtpQ==",
-      "type": "package",
-      "path": "nunit3testadapter/3.9.0",
-      "files": [
-        "LICENSE.txt",
-        "build/net35/Mono.Cecil.Mdb.dll",
-        "build/net35/Mono.Cecil.Pdb.dll",
-        "build/net35/Mono.Cecil.Rocks.dll",
-        "build/net35/Mono.Cecil.dll",
-        "build/net35/NUnit3.TestAdapter.dll",
-        "build/net35/NUnit3TestAdapter.props",
-        "build/net35/nunit.engine.api.dll",
-        "build/net35/nunit.engine.dll",
-        "build/netcoreapp1.0/Mono.Cecil.dll",
-        "build/netcoreapp1.0/NUnit3.TestAdapter.dll",
-        "build/netcoreapp1.0/NUnit3TestAdapter.props",
-        "build/netcoreapp1.0/nunit.engine.netstandard.dll",
-        "nunit3testadapter.3.9.0.nupkg.sha512",
-        "nunit3testadapter.nuspec"
-      ]
-    },
     "Remotion.Linq/2.1.1": {
       "sha512": "HbHoKiyGSPdysbh+gfklDiGFDNBt0T0w3ojK5jgqMDZhpVcrgI+ozy4w0UgL8uMVxMiihcjaYcsR+oHaI9aHGA==",
       "type": "package",
@@ -9572,10 +9545,10 @@
         "version.txt"
       ]
     },
-    "System.ComponentModel.EventBasedAsync/4.3.0": {
-      "sha512": "fCFl8f0XdwA/BuoNrVBB5D0Y48/hv2J+w4xSDdXQitXZsR6UCSOrDVE7TCUraY802ENwcHUnUCv4En8CupDU1g==",
+    "System.ComponentModel.EventBasedAsync/4.0.11": {
+      "sha512": "Z7SO6vvQIR84daPE4uhaNdef9CjgjDMGYkas8epUhf0U3WGuaGgZ0Mm4QuNycMdbHUY8KEdZrtgxonkAiJaAlA==",
       "type": "package",
-      "path": "system.componentmodel.eventbasedasync/4.3.0",
+      "path": "system.componentmodel.eventbasedasync/4.0.11",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -9636,7 +9609,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.eventbasedasync.4.3.0.nupkg.sha512",
+        "system.componentmodel.eventbasedasync.4.0.11.nupkg.sha512",
         "system.componentmodel.eventbasedasync.nuspec"
       ]
     },
@@ -10038,10 +10011,10 @@
         "system.diagnostics.fileversioninfo.nuspec"
       ]
     },
-    "System.Diagnostics.Process/4.3.0": {
-      "sha512": "V5YgFF64AWFYHw5WSV1RpMAcwvZzo82MXi0qqTMp7Lzx45HyivULB0zGVSYEvyqY6L9evPzjwJV9cPKkXFSPQg==",
+    "System.Diagnostics.Process/4.1.0": {
+      "sha512": "lg/5k5TLmqDVy2Mobt0zlQAgQdctmeG9soGoK7ihF5KvJYi0OssMlNeQdw+yLtXSdsvVbwQgqw8Ee9DjipT47w==",
       "type": "package",
-      "path": "system.diagnostics.process/4.3.0",
+      "path": "system.diagnostics.process/4.1.0",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -10089,7 +10062,7 @@
         "runtimes/win/lib/net461/System.Diagnostics.Process.dll",
         "runtimes/win/lib/netstandard1.4/System.Diagnostics.Process.dll",
         "runtimes/win7/lib/netcore50/_._",
-        "system.diagnostics.process.4.3.0.nupkg.sha512",
+        "system.diagnostics.process.4.1.0.nupkg.sha512",
         "system.diagnostics.process.nuspec"
       ]
     },
@@ -12278,21 +12251,15 @@
         "system.runtime.interopservices.runtimeinformation.nuspec"
       ]
     },
-    "System.Runtime.Loader/4.3.0": {
-      "sha512": "puL1bVd8L8UB74SKRwnTdOs1u8OeTPhYKmHu6bkCIYal70pAJ8fTrcg7Ypd6HlAEdO4XM/DUFtDqv6xA5flXMA==",
+    "System.Runtime.Loader/4.0.0": {
+      "sha512": "gunOTbDIUnK3Xp1oQyoCcmhlBfdgI2nq2ZIAXZ4yTR2sV+hCw48O5/A+lhky8TBIaaFQLe8C/RmVhp0dRdP4JA==",
       "type": "package",
-      "path": "system.runtime.loader/4.3.0",
+      "path": "system.runtime.loader/4.0.0",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
         "lib/net462/_._",
         "lib/netstandard1.5/System.Runtime.Loader.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
         "ref/netstandard1.5/System.Runtime.Loader.dll",
         "ref/netstandard1.5/System.Runtime.Loader.xml",
         "ref/netstandard1.5/de/System.Runtime.Loader.xml",
@@ -12304,7 +12271,7 @@
         "ref/netstandard1.5/ru/System.Runtime.Loader.xml",
         "ref/netstandard1.5/zh-hans/System.Runtime.Loader.xml",
         "ref/netstandard1.5/zh-hant/System.Runtime.Loader.xml",
-        "system.runtime.loader.4.3.0.nupkg.sha512",
+        "system.runtime.loader.4.0.0.nupkg.sha512",
         "system.runtime.loader.nuspec"
       ]
     },
@@ -14102,16 +14069,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "System.Xml.XPath.XmlDocument/4.3.0": {
-      "sha512": "A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
+    "System.Xml.XPath.XmlDocument/4.0.1": {
+      "sha512": "Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "type": "package",
-      "path": "system.xml.xpath.xmldocument/4.3.0",
+      "path": "system.xml.xpath.xmldocument/4.0.1",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net46/System.Xml.XPath.XmlDocument.dll",
         "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
@@ -14134,7 +14100,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
+        "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
@@ -14160,6 +14126,119 @@
         "windowsazure.storage.nuspec"
       ]
     },
+    "xunit/2.3.1": {
+      "sha512": "IWux0xXfZ/bC7SgooK5rmW5KwCwFg9GFslmPxA7+pJsT+2SRyhOfOgNUXDd7B09UN4f6kogRT2TqNi6gbWEspA==",
+      "type": "package",
+      "path": "xunit/2.3.1",
+      "files": [
+        "xunit.2.3.1.nupkg.sha512",
+        "xunit.nuspec"
+      ]
+    },
+    "xunit.abstractions/2.0.1": {
+      "sha512": "bDm/zdG5rnRDsobKuKwrvL4HccBdC0uvT12be6fG12P3d1U7u9Wkvfoq/PM2GeyIeb0Dtcmm/7k2oaawiqQ2Dg==",
+      "type": "package",
+      "path": "xunit.abstractions/2.0.1",
+      "files": [
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/netstandard1.0/xunit.abstractions.dll",
+        "lib/netstandard1.0/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.1.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
+    },
+    "xunit.analyzers/0.7.0": {
+      "sha512": "pEjPJ/pd+r9blGBJ9bXg961phkAiCl4k2DwxwWGEZyYC/7Tb1xJ1az0H18uGANX7zFIkvE5ZO1eZZ4vU7gny7w==",
+      "type": "package",
+      "path": "xunit.analyzers/0.7.0",
+      "files": [
+        "analyzers/dotnet/cs/xunit.analyzers.dll",
+        "tools/install.ps1",
+        "tools/uninstall.ps1",
+        "xunit.analyzers.0.7.0.nupkg.sha512",
+        "xunit.analyzers.nuspec"
+      ]
+    },
+    "xunit.assert/2.3.1": {
+      "sha512": "+mUMp3aJOS0ag3qJ2tUhVa930KhwjyypxXT4Ab8lQozEQN8/xgkblQnYs0woIWpr2NbzEOxsZojytl9NBVRKxg==",
+      "type": "package",
+      "path": "xunit.assert/2.3.1",
+      "files": [
+        "lib/netstandard1.1/xunit.assert.dll",
+        "lib/netstandard1.1/xunit.assert.xml",
+        "xunit.assert.2.3.1.nupkg.sha512",
+        "xunit.assert.nuspec"
+      ]
+    },
+    "xunit.core/2.3.1": {
+      "sha512": "LOG4qOFuVQcjYcIuZbKeo03Uvng3lSb2gZJU9ANljwCf+PTd//iAMZS5qcJQZrjhndc4aOUlJGQy5wa0+/iZ6w==",
+      "type": "package",
+      "path": "xunit.core/2.3.1",
+      "files": [
+        "build/xunit.core.props",
+        "build/xunit.core.targets",
+        "build/xunit.execution.desktop.dll",
+        "buildMultiTargeting/xunit.core.props",
+        "buildMultiTargeting/xunit.core.targets",
+        "xunit.core.2.3.1.nupkg.sha512",
+        "xunit.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.core/2.3.1": {
+      "sha512": "1mgYqXeQfU+7zcSRW8/5Uf1jVZ5+5WELmi+BuRTh0xu/x0Q0gK0SuR3FLUF4BSd8sfZzvrRUrhWj3ltpyFxhrg==",
+      "type": "package",
+      "path": "xunit.extensibility.core/2.3.1",
+      "files": [
+        "lib/netstandard1.1/xunit.core.dll",
+        "lib/netstandard1.1/xunit.core.dll.tdnet",
+        "lib/netstandard1.1/xunit.core.xml",
+        "lib/netstandard1.1/xunit.runner.tdnet.dll",
+        "lib/netstandard1.1/xunit.runner.utility.net452.dll",
+        "xunit.extensibility.core.2.3.1.nupkg.sha512",
+        "xunit.extensibility.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.execution/2.3.1": {
+      "sha512": "i8xrHfKC5dyBWQ7I15FePzm0m8KNToBsTleCCQbOQuXRPZIvupd4nnfaCPeJuKHHe7yJ8JGtWxjIgw0ow/cMhg==",
+      "type": "package",
+      "path": "xunit.extensibility.execution/2.3.1",
+      "files": [
+        "lib/net452/xunit.execution.desktop.dll",
+        "lib/net452/xunit.execution.desktop.xml",
+        "lib/netstandard1.1/xunit.execution.dotnet.dll",
+        "lib/netstandard1.1/xunit.execution.dotnet.xml",
+        "xunit.extensibility.execution.2.3.1.nupkg.sha512",
+        "xunit.extensibility.execution.nuspec"
+      ]
+    },
+    "xunit.runner.visualstudio/2.3.1": {
+      "sha512": "B+RtW4dyBquEyjSAFyV5RMifaOZOirDwlzcIq2DNVGo1gzJS8PAPu5S+2y1n6ZgEMWbpqJf9TkZ55+X6FLdy3A==",
+      "type": "package",
+      "path": "xunit.runner.visualstudio/2.3.1",
+      "files": [
+        "build/_common/xunit.abstractions.dll",
+        "build/_common/xunit.runner.reporters.net452.dll",
+        "build/_common/xunit.runner.utility.net452.dll",
+        "build/_common/xunit.runner.visualstudio.testadapter.dll",
+        "build/net20/xunit.runner.visualstudio.props",
+        "build/netcoreapp1.0/xunit.abstractions.dll",
+        "build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll",
+        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll",
+        "build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.xml",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.deps.json",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll",
+        "build/netcoreapp1.0/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.reporters.netstandard11.dll",
+        "build/uap10.0/xunit.runner.utility.netstandard11.dll",
+        "build/uap10.0/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.visualstudio.targets",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.dll",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.pri",
+        "xunit.runner.visualstudio.2.3.1.nupkg.sha512",
+        "xunit.runner.visualstudio.nuspec"
+      ]
+    },
     "sybids/1.0.0": {
       "type": "project",
       "path": "../sybids/sybids.csproj",
@@ -14170,9 +14249,9 @@
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.NET.Test.Sdk >= 15.5.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "NUnit3TestAdapter >= 3.9.0",
-      "nunit >= 3.9.0",
-      "sybids >= 1.0.0"
+      "sybids >= 1.0.0",
+      "xunit >= 2.3.1",
+      "xunit.runner.visualstudio >= 2.3.1"
     ]
   },
   "packageFolders": {
@@ -14186,13 +14265,13 @@
       "projectName": "sybids.tests",
       "projectPath": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/sybids.tests.csproj",
       "packagesPath": "/Users/ericbohn/.nuget/packages/",
-      "outputPath": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/obj",
+      "outputPath": "/Users/ericbohn/Documents/Projects/sybids/sybids.tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/ericbohn/.config/NuGet/NuGet.Config"
+        "/Users/ericbohn/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -14218,23 +14297,23 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Microsoft.NET.Test.Sdk": {
+            "target": "Package",
+            "version": "[15.5.0, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           },
-          "nunit": {
+          "xunit": {
             "target": "Package",
-            "version": "3.9.0"
+            "version": "[2.3.1, )"
           },
-          "NUnit3TestAdapter": {
+          "xunit.runner.visualstudio": {
             "target": "Package",
-            "version": "3.9.0"
-          },
-          "Microsoft.NET.Test.Sdk": {
-            "target": "Package",
-            "version": "15.5.0"
+            "version": "[2.3.1, )"
           }
         },
         "imports": [

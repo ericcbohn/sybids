@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using sybids.Models;
 using sybids.Interfaces;
+using sybids.Repo.Context;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Bson;
@@ -67,12 +68,12 @@ namespace sybids.Repo
             throw new NotImplementedException();
         }
 
-        public Task<bool> RemovePairing(int pairingId)
+        public Task<bool> RemovePairing(string pairingId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdatePairing(int pairingId, PairingModel pairing)
+        public Task<bool> UpdatePairing(string pairingId, PairingModel pairing)
         {
             if(pairing == null) throw new ArgumentNullException(nameof(pairing));
             throw new NotImplementedException();

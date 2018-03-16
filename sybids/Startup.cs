@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using sybids.Repo;
+using sybids.Interfaces;
 
 namespace sybids
 {
@@ -28,7 +29,8 @@ namespace sybids
              * Scoped: created only once per request
              * Singleton: created the first time requested.  Each subsequent request uses the instance that was created the first time.
              */
-            services.AddTransient<IBidRepo, BidRepo>();
+            services.AddTransient<ILineRepo, LineRepo>();
+            services.AddTransient<IPairingRepo, PairingRepo>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

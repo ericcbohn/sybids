@@ -3,8 +3,10 @@ using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using sybids.Models;
 
-namespace sybids.Repo {
-    public sealed class MongoContext {
+namespace sybids.Repo.Context 
+{
+    public sealed class MongoContext 
+    {
         private readonly IMongoDatabase _database = null;
 
         public MongoContext(IOptions<Settings> settings) {

@@ -13364,13 +13364,13 @@
       "projectName": "sybids",
       "projectPath": "/Users/ericbohn/Documents/Projects/sybids/sybids/sybids.csproj",
       "packagesPath": "/Users/ericbohn/.nuget/packages/",
-      "outputPath": "/Users/ericbohn/Documents/Projects/sybids/sybids/obj",
+      "outputPath": "/Users/ericbohn/Documents/Projects/sybids/sybids/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/ericbohn/.config/NuGet/NuGet.Config"
+        "/Users/ericbohn/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13392,31 +13392,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.AspNetCore.SpaServices.Extensions": {
             "target": "Package",
-            "version": "2.0.0-rc1-final"
+            "version": "[2.0.0-rc1-final, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "MongoDB.Driver": {
             "target": "Package",
-            "version": "2.5.0"
-          },
-          "mysql.data": {
-            "target": "Package",
-            "version": "6.10.6"
+            "version": "[2.5.0, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "10.0.3"
+            "version": "[10.0.3, )"
+          },
+          "mysql.data": {
+            "target": "Package",
+            "version": "[6.10.6, )"
           }
         },
         "imports": [
