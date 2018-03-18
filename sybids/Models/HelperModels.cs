@@ -1,7 +1,5 @@
-using System;
-using Newtonsoft.Json;
-
-namespace sybids.Models {
+namespace sybids.Models
+{
     public enum Airport { CUN,DEN,IFP,JFK,LAS,LAX,MCO,MSP,RSW,ZIH }
     
     public enum Position { CA, FO }

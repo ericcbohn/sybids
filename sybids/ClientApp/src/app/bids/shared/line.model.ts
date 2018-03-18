@@ -9,9 +9,9 @@ export interface MongoObjId {
 
 export interface PairingModel { 
     // _id: MongoObjId;
-    pairingId: string;
+    pairingid: string;
     base: string;
-    numDays: string;
+    numdays: string;
     block: string;
     credit: string;
     landings: string;
@@ -21,27 +21,27 @@ export interface PairingModel {
 }
 
 export interface DutyModel { 
-    dutyDay: string;
+    dutyday: string;
     legs: string;
     brief: string;
     debrief: string;
-    dutyTime: string;
+    dutytime: string;
     block: string; 
     credit: string;
     rest: string;
-    restType: string;
+    resttype: string;
     leg: LegModel[];
 }
 
 export interface LegModel { 
     legNum: string;
     equipment: string;
-    fleetCode: string;
+    fleetcode: string;
     flight: string;
     departure: string;
     arrival: string;
-    departureTime: string;
-    arrivalTime: string;
+    departuretime: string;
+    arrivaltime: string;
     block: string;
     carrier: string;
 }
@@ -54,7 +54,7 @@ export interface LineModel {
     position: string;
     blockminutes: string;
     creditminutes: string;
-    days: DayModel[];
+    day: DayModel[];
 }
 
 export interface DayModel {
@@ -64,7 +64,7 @@ export interface DayModel {
 }
 
 export interface RawDayModel {
-  month: string;
-  day: string;
-  dayIndex: number;
+    month: string;
+    day: string;
+    dayIndex: number;
 }

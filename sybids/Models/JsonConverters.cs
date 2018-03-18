@@ -1,6 +1,6 @@
-﻿using System;
-using Newtonsoft.Json;
-using sybids.Models;
+﻿using Newtonsoft.Json;
+using System;
+using System.Text.RegularExpressions;
 
 namespace sybids.Models
 {
@@ -17,25 +17,31 @@ namespace sybids.Models
             var len = rawVal.Length;
             var min = string.Empty;
             var hr = string.Empty;
-            if(len == 1) {
-                min = string.Format("{0}{1}", "0", rawVal[0]);
-                hr = "00";
+            if(len == 5) {
+                var digit = "0";
+                if (rawVal[0] != ' ') digit = string.Format("{0}", rawVal[0]);
+                hr = string.Format("{0}{1}", digit, rawVal[1]);
+                min = string.Format("{0}{1}", rawVal[3], rawVal[4]);
             }
-            else if(len == 2) {
+            else if (len == 4) {
+                hr = string.Format("{0}{1}", rawVal[0], rawVal[1]);
+                min = string.Format("{0}{1}", rawVal[2], rawVal[3]);
+            }
+            else if (len == 3) {
+                hr = string.Format("{0}{1}", "0", rawVal[0]);
+                min = string.Format("{0}{1}", rawVal[1], rawVal[2]);
+            }
+            else if (len == 2)
+            {
                 min = string.Format("{0}{1}", rawVal[0], rawVal[1]);
                 hr = "00";
             }
-            else if(len == 3) {
-                min = string.Format("{0}{1}", rawVal[1], rawVal[2]);
-                hr = string.Format("{0}{1}", "0", rawVal[0]);
+            else // len == 1
+            {
+                min = string.Format("{0}{1}", "0", rawVal[0]);
+                hr = "00";
             }
-            else {
-                min = string.Format("{0}{1}", rawVal[2], rawVal[3]);
-                hr = string.Format("{0}{1}", rawVal[0], rawVal[1]);
-            }
-            var time = BidTimeSpan.Parse(string.Format("{0}:{1}", hr, min));
-
-            return time;
+            return BidTimeSpan.Parse(string.Format("{0}:{1}", hr, min));
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

@@ -1,12 +1,12 @@
-using System;
-using MongoDB.Driver;
 using Microsoft.Extensions.Options;
-using sybids.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using sybids.Interfaces;
+using sybids.Models;
 using sybids.Repo.Context;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MongoDB.Bson;
 
 namespace sybids.Repo
 {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PairingModel, DutyModel, LegModel } from '../shared/line.model';
+import { PairingModel, DutyModel, LegModel } from './line.model';
 
 
 @Injectable()
@@ -24,9 +24,9 @@ export class PairingHandlerService {
         case 'PRG':
           pairingIndex++;
           pairing = {
-            pairingId: data[1],
+            pairingid: data[1],
             base: data[5],
-            numDays: data[6],
+            numdays: data[6],
             block: data[9],
             credit: data[10],
             landings: data[11],
@@ -40,15 +40,15 @@ export class PairingHandlerService {
         case 'DTY':
           dutyIndex++;
           duty = { 
-            dutyDay: data[1],
+            dutyday: data[1],
             legs: data[2],
             brief: data[3],
             debrief: data[4],
-            dutyTime: data[5],
+            dutytime: data[5],
             block: data[6],
             credit: data[8],
             rest: data[9],
-            restType: data[10],
+            resttype: data[10],
             leg: []
           }
           pairings[pairingIndex].duty.push(duty);
@@ -57,12 +57,12 @@ export class PairingHandlerService {
           leg = {
             legNum: data[1],
             equipment: data[3],
-            fleetCode: data[4],
+            fleetcode: data[4],
             flight: data[5],
             departure: data[6],
             arrival: data[8],
-            departureTime: data[7],
-            arrivalTime: data[9],
+            departuretime: data[7],
+            arrivaltime: data[9],
             block: data[10],
             carrier: data[13]
           }

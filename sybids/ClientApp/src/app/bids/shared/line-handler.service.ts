@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RawDayModel, LineModel, PairingModel, DutyModel, LegModel, DayModel } from '../shared/line.model';
+import { RawDayModel, LineModel, PairingModel, DutyModel, LegModel, DayModel } from './line.model';
 
 @Injectable()
 export class LineHandlerService {
@@ -103,7 +103,7 @@ export class LineHandlerService {
         position: this.getDetail(rawLines[lineIndexes[i]+lineDetailProperty.position.row], lineDetailProperty.position.start, lineDetailProperty.position.length),
         blockminutes: this.getDetail(rawLines[lineIndexes[i]+lineDetailProperty.block.row], lineDetailProperty.block.start, lineDetailProperty.block.length),
         creditminutes: this.getDetail(rawLines[lineIndexes[i]+lineDetailProperty.credit.row], lineDetailProperty.credit.start, lineDetailProperty.credit.length),
-        days: []
+        day: []
       };
 
       // parse days
@@ -129,7 +129,7 @@ export class LineHandlerService {
           else if(detail === '') { break; }
           day.pairingid.push(detail);
         }
-        line.days.push(day);
+        line.day.push(day);
       }
       lines.push(line);
     }

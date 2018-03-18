@@ -5,12 +5,21 @@ import { PairingModel } from '../shared/line.model';
 @Injectable()
 export class PairingService {
   private PAIRING_URL = '/api/pairing/';
+  private PAIRINGS_URL = '/api/pairing/pairings/';
 
   constructor(private http: Http) { }
 
   save(pairing: PairingModel) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.post(this.PAIRING_URL, JSON.stringify(pairing), {headers: headers})
+                    .toPromise()
+                    .then(res => res)
+                    .catch(this.handleError);
+  }
+
+  savePairings(pairings: PairingModel[]) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post(this.PAIRINGS_URL, JSON.stringify(pairings), { headers: headers })
                     .toPromise()
                     .then(res => res)
                     .catch(this.handleError);
@@ -32,7 +41,7 @@ export class PairingService {
 
   put(pairing: PairingModel): Promise<PairingModel> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.PAIRING_URL + pairing.pairingId;
+    const url = this.PAIRING_URL + pairing.pairingid;
     return this.http.put(url, JSON.stringify(pairing), { headers: headers})
                     .toPromise()
                     .then(() => pairing)
@@ -41,7 +50,7 @@ export class PairingService {
 
   delete(pairing: PairingModel): Promise<Response> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.PAIRING_URL + pairing.pairingId;
+    const url = this.PAIRING_URL + pairing.pairingid;
     return this.http.delete(url, { headers: headers })
                     .toPromise()
                     .catch(this.handleError);

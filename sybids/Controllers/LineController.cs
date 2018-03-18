@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sybids.Interfaces;
 using sybids.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace sybids.Controllers 
+namespace sybids.Controllers
 {
     [Route("api/[controller]")]
     public class LineController : Controller 
@@ -21,6 +19,11 @@ namespace sybids.Controllers
         [HttpPost]
         public void Post([FromBody]LineModel line) {
             this._repo.AddLine(line);
+        }
+
+        [HttpPost("lines")]
+        public void Post([FromBody]List<LineModel> lines) { 
+            this._repo.AddLines(lines);
         }
 
         [HttpGet]

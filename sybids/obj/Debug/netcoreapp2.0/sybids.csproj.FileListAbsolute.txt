@@ -29,3 +29,14 @@
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.dll
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.pdb
 /Users/ericbohn/Documents/Projects/sybids/sybids/obj/Debug/netcoreapp2.0/sybids.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\projects\sybids\sybids\bin\Debug\netcoreapp2.0\sybids.deps.json
+C:\Users\Admin\Documents\projects\sybids\sybids\bin\Debug\netcoreapp2.0\sybids.runtimeconfig.json
+C:\Users\Admin\Documents\projects\sybids\sybids\bin\Debug\netcoreapp2.0\sybids.runtimeconfig.dev.json
+C:\Users\Admin\Documents\projects\sybids\sybids\bin\Debug\netcoreapp2.0\sybids.dll
+C:\Users\Admin\Documents\projects\sybids\sybids\bin\Debug\netcoreapp2.0\sybids.pdb
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.AssemblyInfo.cs
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.dll
+C:\Users\Admin\Documents\projects\sybids\sybids\obj\Debug\netcoreapp2.0\sybids.pdb

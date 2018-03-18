@@ -5,13 +5,21 @@ import { LineModel } from './line.model';
 @Injectable()
 export class LineService {
   private LINE_URL = '/api/line/';
+  private LINES_URL = '/api/line/lines/';
     
   constructor(private http: Http) { }
 
   save(line: LineModel) {
-    console.log(JSON.stringify(line));
     const headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.post(this.LINE_URL, JSON.stringify(line), {headers: headers})
+                    .toPromise()
+                    .then(res => res)
+                    .catch(this.handleError);
+  }
+
+  saveLines(lines: LineModel[]) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post(this.LINES_URL, JSON.stringify(lines), { headers: headers })
                     .toPromise()
                     .then(res => res)
                     .catch(this.handleError);

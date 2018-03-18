@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sybids.Interfaces;
 using sybids.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace sybids.Controllers 
+namespace sybids.Controllers
 {
     [Route("api/[controller]")]
-    public class PairingController : Controller 
+    public class PairingController : Controller
     {
         private readonly IPairingRepo _repo;
 
@@ -20,6 +18,11 @@ namespace sybids.Controllers
         [HttpPost]
         public void Post([FromBody]PairingModel pairing) {
             this._repo.AddPairing(pairing);
+        }
+
+        [HttpPost("pairings")]
+        public void Post([FromBody]List<PairingModel> pairings) {
+            this._repo.AddPairings(pairings);
         }
 
         [HttpGet]

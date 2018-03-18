@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 // using Newtonsoft.Json.Converters;
 
-namespace sybids.Models {
+namespace sybids.Models
+{
     public class LineModel {
         //[JsonProperty("_id", Required = Required.AllowNull), BsonId]
         // [JsonIgnore, BsonId]
@@ -24,14 +25,14 @@ namespace sybids.Models {
         [JsonProperty("position"), BsonElement("position")]
         public string Position { get; set; }
 
-        [JsonProperty("blockminutes"), BsonElement("blockminutes")]//, JsonConverter(typeof(JsonTimeSpanConverter))]
+        [JsonProperty("blockminutes"), BsonElement("blockminutes"), JsonConverter(typeof(JsonTimeSpanConverter))]
         public BidTimeSpan BlockMinutes { get; set; }
 
-        [JsonProperty("creditminutes"), BsonElement("creditminutes")]//, JsonConverter(typeof(JsonTimeSpanConverter))]
+        [JsonProperty("creditminutes"), BsonElement("creditminutes"), JsonConverter(typeof(JsonTimeSpanConverter))]
         public BidTimeSpan CreditMinutes { get; set; }
 
-        [JsonProperty("days"), BsonElement("days")]
-        public List<DayModel> Days { get; set; }
+        [JsonProperty("day"), BsonElement("day")]
+        public List<DayModel> Day { get; set; }
     }
 
     public class DayModel {
@@ -47,6 +48,9 @@ namespace sybids.Models {
 
     public class PairingModel {
         // TODO: _id mongo object id
+        //[JsonProperty("_id", Required = Required.AllowNull), BsonId]
+        // [JsonIgnore, BsonId]
+        // public ObjectId _id { get; set; }
 
         [JsonProperty("pairingid"), BsonElement("pairingid")]
         public string PairingId { get; set; }
@@ -152,7 +156,9 @@ namespace sybids.Models {
 
         public static BidTimeSpan Parse(string time) {
             if (!Regex.IsMatch(time, @"^\d{1,2}:\d{2}$")) throw new ArgumentException("invalid time format");
-            var hours = Convert.ToInt16(string.Format("{0}{1}", time[0], time[1]));
+            var hours = 0;
+            if (time.Length == 5) Convert.ToInt16(string.Format("{0}{1}", time[0], time[1]));
+            else Convert.ToInt16(string.Format("{0}{1}", "0", time[1]));
             var minutes = Convert.ToInt16(string.Format("{0}{1}", time[3], time[4]));
             return new BidTimeSpan(hours, minutes);
         }

@@ -1,9 +1,8 @@
-using System;
-using MongoDB.Driver;
 using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using sybids.Models;
 
-namespace sybids.Repo.Context 
+namespace sybids.Repo.Context
 {
     public sealed class MongoContext 
     {
