@@ -26,14 +26,16 @@
               <tr *ngFor="let line of lines">
                 <td>
                   <div>
-                    <div><p>Line Id: {{ line.lineid }}</p></div>
-                    <div><p>Block: {{ line.blockminutes }}</p></div>
-                    <div><p>Credit: {{ line.creditminutes }}</p></div>
+                    <span><p>{{ line.position }} {{ line.lineid }}</p></span>
+                    <span><p>Block: {{ line.blockminutes }}</p></span>
+                    <span><p>Credit: {{ line.creditminutes }}</p></span>
                   </div>
                 </td>
                 <td *ngFor="let day of line.day">
-                  <div><p>{{ day.month }} {{ day.day }}</p></div>
-                  <div><p>{{ day.pairingid }}</p></div>
+                  <div>
+                    <span><p>{{ day.month }} {{ day.day }}</p></span>
+                    <span><p>{{ day.pairingid }}</p></span>
+                  </div>  
                 </td>
               </tr> 
             </tbody>
