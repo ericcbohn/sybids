@@ -37,9 +37,9 @@ namespace sybids.Controllers
         }
 
         // Put specific pairing - api/pairing/{pairing}
-        [HttpPut("{pairingid, pairing}")]
-        public void Put(string pairingId, [FromBody]PairingModel pairing) {
-            _repo.UpdatePairing(pairingId, pairing);
+        [HttpPut]
+        public void Put([FromBody]PairingModel pairing) {
+            _repo.UpdatePairing(pairing);
         }
 
         // Delete specific pairing - api/pairing/{pairingid}

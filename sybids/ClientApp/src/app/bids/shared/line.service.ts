@@ -39,13 +39,12 @@ export class LineService {
                     .catch(this.handleError);
   }
 
-  put(line: LineModel): Promise<LineModel> {
+  update(line: LineModel) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.LINE_URL + line.lineid;
-    return this.http.put(url, JSON.stringify(line), { headers: headers})
-                    .toPromise()
-                    .then(() => line)
-                    .catch(this.handleError);
+    return this.http.put(this.LINE_URL, JSON.stringify(line), { headers: headers })
+      .toPromise()
+      .then(res => res)
+      .catch(this.handleError);
   }
 
   delete(line: LineModel): Promise<Response> {

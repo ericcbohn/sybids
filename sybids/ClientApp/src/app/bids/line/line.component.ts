@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LOCALE_DATA } from '@angular/common/src/i18n/locale_data';
 import { LineService } from '../shared/line.service';
+import { PairingService } from '../shared/pairing.service';
 import { LineHandlerService } from '../shared/line-handler.service';
 import { PairingHandlerService } from '../shared/pairing-handler.service';
-import { PairingService } from '../shared/pairing.service';
 import { LineModel, PairingModel } from '../shared/line.model';
 
 @Component({
@@ -37,22 +37,12 @@ export class LineComponent implements OnInit {
     event.stopPropagation(); // Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
     this.ls.saveLines(this.lines);
     this.ps.savePairings(this.pairings);
-    //for(let i = 0; i < this.lines.length; i++) {
-    //  this.ls.save(this.lines[i])
-    //    .then(res => res) // this.getLines()
-    //    .catch(err => this.error = err);
-    //}
-    //for(let i = 0; i < this.pairings.length; i++) {
-    //  this.ps.save(this.pairings[i])
-    //    .then(res => res) // this.getLines()
-    //    .catch(err => this.error = err);
-    //}
   }
 
   getLines(): void {
-    // this.ls.getLines()
-        //.then(lines => this.lines = lines)
-        //.catch(error => this.error = error);
+     this.ls.getLines()
+        .then(lines => this.lines = lines)
+        .catch(error => this.error = error);
   }
 
   deleteLine(line: LineModel, event: any): void {
@@ -66,12 +56,6 @@ export class LineComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.ls.getLines();
+    this.ls.getLines();
   }
 }
-
-// getConvertedTime(minutes:string): string {
-//   let hours: string = Math.floor(parseFloat(minutes)/60).toString();
-//   let mins: string = ("0" + (parseFloat(minutes)%60)).slice(-2);
-//   return hours + ':' + mins;
-// }

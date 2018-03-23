@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using sybids.Models;
+using MongoDB.Bson.Serialization;
 
 namespace sybids.Repo.Context
 {

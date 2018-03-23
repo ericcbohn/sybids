@@ -38,9 +38,9 @@ namespace sybids.Controllers
         }
 
         // Put specific line - api/bid/{lineid}
-        [HttpPut("{lineid}")]
-        public void Put(int lineId, [FromBody]LineModel line) {
-            _repo.UpdateLine(lineId, line);
+        [HttpPut]
+        public void Put([FromBody]LineModel line) {
+            _repo.UpdateLine(line);
         }
 
         // Delete specific line - api/bid/{lineid}

@@ -8,10 +8,10 @@ using System.Text.RegularExpressions;
 
 namespace sybids.Models
 {
+    [BsonIgnoreExtraElements]
     public class LineModel {
-        //[JsonProperty("_id", Required = Required.AllowNull), BsonId]
-        // [JsonIgnore, BsonId]
-        // public ObjectId _id { get; set; }
+        //[JsonProperty("_id"), BsonElement("_id"), JsonIgnore, BsonIgnore, BsonId]
+        //public ObjectId _id { get; set; }
 
         [JsonProperty("lineid"), BsonElement("lineid")]
         public string LineId { get; set; }
@@ -46,11 +46,10 @@ namespace sybids.Models
         public List<string> PairingId { get; set; }
     }
 
+    [BsonIgnoreExtraElements]
     public class PairingModel {
-        // TODO: _id mongo object id
-        //[JsonProperty("_id", Required = Required.AllowNull), BsonId]
-        // [JsonIgnore, BsonId]
-        // public ObjectId _id { get; set; }
+        //[JsonProperty("_id"), BsonElement("_id"), JsonIgnore, BsonIgnore, BsonId]
+        //public ObjectId _id { get; set; }
 
         [JsonProperty("pairingid"), BsonElement("pairingid")]
         public string PairingId { get; set; }

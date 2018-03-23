@@ -12,6 +12,6 @@ namespace sybids.Interfaces
         Task<IEnumerable<PairingModel>> GetPairings();
         Task<bool> RemovePairing(string pairingId);
         Task<bool> RemoveAllPairings();
-        Task<bool> UpdatePairing(string pairingId, PairingModel pairing);
+        Task UpdatePairing(PairingModel pairing);
     }
 }

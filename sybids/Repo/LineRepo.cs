@@ -23,25 +23,26 @@ namespace sybids.Repo
         public async Task AddLine(LineModel line)
         {
             if(line == null) throw new ArgumentNullException(nameof(line));
-
-            var deleteme = Builders<LineModel>.Filter.Eq("lineid", 1);
-            await _context.Lines.CountAsync(deleteme);
-            // try {
-            //     await _context.Lines.InsertOneAsync(line);
-            // }
-            // catch (Exception ex) {
-            //     // log or manage
-            //     throw ex;
-            // }
+            try
+            {
+                await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(line.LineId), line, new UpdateOptions { IsUpsert = true });
+            }
+            catch (Exception ex)
+            {
+                // log or manage
+                throw ex;
+            }
         }
 
         public async Task AddLines(IEnumerable<LineModel> lines)
         {
             if(lines == null) throw new ArgumentNullException(nameof(lines));
-            try {
+            try
+            {
                 await _context.Lines.InsertManyAsync(lines);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 // log or manage
                 throw ex;
             }
@@ -89,12 +90,12 @@ namespace sybids.Repo
             }
         }
 
-        public async Task<bool> UpdateLine(int lineId, LineModel line)
+        public async Task UpdateLine(LineModel line)
         {
             if(line == null) throw new ArgumentNullException(nameof(line));
             try {
-                ReplaceOneResult actionResult = await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(lineId), replacement: line, options: new UpdateOptions { IsUpsert = true });
-                return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
+                await _context.Lines.ReplaceOneAsync(l => l.LineId.Equals(line.LineId), line, new UpdateOptions { IsUpsert = true });
+                //return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
             }
             catch(Exception ex) {
                 // log or manage

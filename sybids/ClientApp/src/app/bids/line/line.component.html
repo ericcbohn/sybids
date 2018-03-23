@@ -4,63 +4,41 @@
   <div class="row">
     <form method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <div class="col-md-10">
-          <p>Upload pairing csv file:</p>
-          <input type="file" (change)="csvSelected($event)" />
-        </div>
+        <label for="pairings">Upload pairing csv file:</label>
+        <input id="pairings" class="form-control" type="file" (change)="csvSelected($event)" />
       </div>
       <div class="form-group">
-          <div class="col-md-10">
-            <p>Upload "routes only" txt file:</p>
-            <input type="file" (change)="txtSelected($event)" />
-          </div>
-        </div>
+        <label for="lines">Upload "routes only" txt file:</label>
+        <input id="lines" class="form-control" type="file" (change)="txtSelected($event)" />
+      </div>
       <div class="form-group">
-        <div class="col-md-10">
-          <button type="button" (click)="saveBidPack()">Submit</button> 
-        </div>
+        <button type="button" (click)="saveBidPack()">Submit</button> 
       </div>
     </form>
   </div>
-  <!-- <div class="row">
-      <div class="col-sm-8">
-          <div [class.hidden]="lines" class="alert alert-info">
-              <p>Please Wait...</p> 
-          </div>
-          <table class="table">
-              <thead>
-              </thead>
-              <tbody class="lines">
-                <tr *ngFor="let line of lines">
-                  <td>
-                    <div>
-                      <div><p>Line ID: {{ line.lineid }}</p></div>
-                      <div><p>Days Off: {{ line.numdaysoff }}</p></div>
-                      <div><p>TAFB: {{ line.tafb }}</p></div>
-                    </div> 
-                    <div>
-                      <div><p>Block: {{ line.blockminutes }}</p></div>
-                      <div><p>Credit: {{ line.creditminutes }}</p></div>
-                    </div>
-                  </td>
-                  <td *ngFor="let day of line.days">
-                    <div *ngIf="!day.isoff; else showPairing">
-                      <div><p>Report: {{ day.reporttimeutc }}</p></div>
-                      <div *ngFor="let pairing of day.pairings">
-                        <span><p>Flight: {{ pairing.flight }}</p></span>
-                        <span><p>{{ pairing.departure }} {{ pairing.destination }}</p></span>
-                        <span *ngIf="pairing.isdeadhead">*</span>
-                      </div>
-                      <div><p>Release: {{ day.releasetimeutc }}</p></div>
-                    </div>
-                    <ng-template #showPairing>
-                      <span><p>OFF</p></span>
-                    </ng-template>
-                  </td>
-                </tr> 
-              </tbody>
-          </table>
-      </div>
-  </div> -->
+  <div class="row">
+    <div class="col-sm-8">
+        <div [class.hidden]="lines" class="alert alert-info">
+            <p>please wait...</p> 
+        </div>
+        <table class="table">
+            <tbody class="lines">
+              <tr *ngFor="let line of lines">
+                <td>
+                  <div>
+                    <div><p>Line Id: {{ line.lineid }}</p></div>
+                    <div><p>Block: {{ line.blockminutes }}</p></div>
+                    <div><p>Credit: {{ line.creditminutes }}</p></div>
+                  </div>
+                </td>
+                <td *ngFor="let day of line.day">
+                  <div><p>{{ day.month }} {{ day.day }}</p></div>
+                  <div><p>{{ day.pairingid }}</p></div>
+                </td>
+              </tr> 
+            </tbody>
+        </table>
+    </div>
+  </div> 
 </div>
 <div class="error" *ngIf="error">{{ error }}</div>

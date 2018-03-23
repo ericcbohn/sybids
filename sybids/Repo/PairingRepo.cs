@@ -1,11 +1,14 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using MongoDB.Bson;
+using Newtonsoft.Json;
 using sybids.Interfaces;
 using sybids.Models;
 using sybids.Repo.Context;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace sybids.Repo
 {
@@ -20,25 +23,26 @@ namespace sybids.Repo
         public async Task AddPairing(PairingModel pairing)
         {
             if(pairing == null) throw new ArgumentNullException(nameof(pairing));
-
-            var deleteme = Builders<PairingModel>.Filter.Eq("pairingid", 1);
-            await _context.Pairings.CountAsync(deleteme);
-            // try {
-            //     await _context.Pairings.InsertOneAsync(pairing);
-            // }
-            // catch (Exception ex) {
-            //     // log or manage
-            //     throw ex;
-            // }
+            try
+            {
+                await _context.Pairings.ReplaceOneAsync(p => p.PairingId.Equals(pairing.PairingId), pairing, new UpdateOptions { IsUpsert = true });
+            }
+            catch (Exception ex)
+            {
+                // log or manage
+                throw ex;
+            }
         }
 
         public async Task AddPairings(IEnumerable<PairingModel> pairings)
         {
             if (pairings == null) throw new ArgumentNullException(nameof(pairings));
-            try {
+            try
+            {
                 await _context.Pairings.InsertManyAsync(pairings);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 // log or manage
                 throw ex;
             }
@@ -72,10 +76,19 @@ namespace sybids.Repo
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdatePairing(string pairingId, PairingModel pairing)
+        public async Task UpdatePairing(PairingModel pairing)
         {
             if(pairing == null) throw new ArgumentNullException(nameof(pairing));
-            throw new NotImplementedException();
+
+            try
+            {
+                await _context.Pairings.ReplaceOneAsync(p => p.PairingId.Equals(pairing.PairingId), pairing, new UpdateOptions { IsUpsert = true });
+            }
+            catch (Exception ex)
+            {
+                // log or manage
+                throw ex;
+            }
         }
     }
 }

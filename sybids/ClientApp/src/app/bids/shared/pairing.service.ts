@@ -39,13 +39,12 @@ export class PairingService {
                     .catch(this.handleError);
   }
 
-  put(pairing: PairingModel): Promise<PairingModel> {
+  update(pairing: PairingModel) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    const url = this.PAIRING_URL + pairing.pairingid;
-    return this.http.put(url, JSON.stringify(pairing), { headers: headers})
-                    .toPromise()
-                    .then(() => pairing)
-                    .catch(this.handleError);
+    return this.http.put(this.PAIRING_URL, JSON.stringify(pairing), { headers: headers })
+      .toPromise()
+      .then(res => res)
+      .catch(this.handleError);
   }
 
   delete(pairing: PairingModel): Promise<Response> {

@@ -12,6 +12,6 @@ namespace sybids.Interfaces
         Task<IEnumerable<LineModel>> GetLines();
         Task<bool> RemoveLine(int lineId);
         Task<bool> RemoveAllLines();
-        Task<bool> UpdateLine(int lineId, LineModel line);
+        Task UpdateLine(LineModel line);
     }
 }
